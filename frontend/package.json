@@ -1,0 +1,34 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build && tauri build",
+    "start": "next start",
+    "lint": "next lint",
+    "tauri": "tauri",
+    "dev": "next dev",
+    "devv": "concurrently \"npm run dev\" \"npm run tauri:dev\"",
+    "tauri:dev": "tauri dev"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "framer-motion": "^11.3.5",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.6.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "concurrently": "^9.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5"
+  }
+}
