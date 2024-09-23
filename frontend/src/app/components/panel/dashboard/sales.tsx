@@ -1,36 +1,33 @@
 import React from "react";
-import {
-  IoBarChartOutline,
-  IoCardOutline,
-  IoPeopleOutline,
-} from "react-icons/io5";
 import { BiMoneyWithdraw } from "react-icons/bi";
+import { PiProjectorScreenChart } from "react-icons/pi";
+
 
 const Sales: React.FC = () => {
   const salesData = [
     {
-      amount: "1542",
-      label: "Total Sales",
-      percentage: "+9.23% from previous period",
-      icon: <IoBarChartOutline />,
-    },
-    {
-      amount: "938",
-      label: "New Orders",
-      percentage: "-1.09% from previous period",
+      amount: "R$ 120.000,60",
+      label: "Total Billing",
+      percentage: "+9.23% from previous period the 30 days ago",
       icon: <BiMoneyWithdraw />,
     },
     {
-      amount: "8246",
-      label: "New Users",
-      percentage: "+16.2% from previous period",
-      icon: <IoPeopleOutline />,
+      amount: "R$ 20.000,00",
+      label: "Expenses",
+      percentage: "-1.09% from previous period the 30 days ago",
+      icon: <BiMoneyWithdraw />,
     },
     {
-      amount: "29670",
-      label: "Unique Visitors",
-      percentage: "0.8% from previous period",
-      icon: <IoCardOutline />,
+      amount: "1",
+      label: "Ongoing Projects",
+      percentage: "+16.2% from previous period the 30 days ago",
+      icon: <PiProjectorScreenChart />,
+    },
+    {
+      amount: "3",
+      label: "Projects Completed",
+      percentage: "0.8% from previous period the 30 days ago",
+      icon: <PiProjectorScreenChart />,
     },
   ];
 

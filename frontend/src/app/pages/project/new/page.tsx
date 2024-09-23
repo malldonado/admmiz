@@ -2,6 +2,7 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
+import Form from '@/components/panel/projects/new/form';
 
 const ProjectNew: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const ProjectNew: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white">
         <Navbar/>
+        <Form/>
       </div>
     </div>
   );

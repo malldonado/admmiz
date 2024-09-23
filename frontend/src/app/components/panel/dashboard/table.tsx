@@ -2,94 +2,84 @@ import { FC } from "react";
 
 interface User {
   id: string;
-  name: string;
-  position: string;
-  status: "Active" | "Deactive";
-  age: number;
-  date: Date;
-  salary: number;
+  title: string;
+  description: string;
+  status: "In progress" | "Finished" | "Stopped";
+  start: Date;
+  days: number;
+  value: number;
 }
 
 const users: User[] = [
   {
     id: "1",
-    name: "Matheus Maldonado",
-    position: "Web Developer",
-    status: "Active",
-    age: 23,
-    date: new Date("2021-04-01"),
-    salary: 42450,
+    title: "House Alphaville",
+    description: "House the 2000 sq. ft. house",
+    status: "In progress",
+    start: new Date("2021-04-01"),
+    days: 23,
+    value: 42450,
   },
   {
     id: "2",
-    name: "Nathalia Silva",
-    position: "Python Developer",
-    status: "Deactive",
-    age: 28,
-    date: new Date("2023-08-15"),
-    salary: 45000,
-  },
-  {
-    id: "3",
-    name: "Rafael Souza",
-    position: "React Developer",
-    status: "Active",
-    age: 32,
-    date: new Date("2022-02-25"),
-    salary: 34400,
-  },
-  {
-    id: "4",
-    name: "Matheus Maldonado",
-    position: "Web Developer",
-    status: "Active",
-    age: 23,
-    date: new Date("2021-04-01"),
-    salary: 42450,
-  },
-  {
-    id: "5",
-    name: "Nathalia Silva",
-    position: "Python Developer",
-    status: "Deactive",
-    age: 28,
-    date: new Date("2023-08-15"),
-    salary: 45000,
+    title: "Nathalia Silva",
+    description: "Python Developer",
+    status: "Finished",
+    start: new Date("2023-08-15"),
+    days: 28,
+    value: 45000,
   },
 ];
 
 const TableHeader: FC = () => (
   <thead className="bg-gray-50 dark:bg-gray-200">
     <tr>
-      {["Name", "Position", "Status", "Age", "Start date", "Salary"].map((header) => (
-        <th
-          key={header}
-          scope="col"
-          className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-black"
-        >
-          {header}
-        </th>
-      ))}
+      {["Title", "Description", "Status", "Start", "Days", "Value (R$)"].map(
+        (header) => (
+          <th
+            key={header}
+            scope="col"
+            className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-black"
+          >
+            {header}
+          </th>
+        )
+      )}
     </tr>
   </thead>
 );
 
-const TableRow: FC<User> = ({ name, position, status, age, date, salary }) => (
+const TableRow: FC<User> = ({
+  title,
+  description,
+  status,
+  start,
+  days,
+  value,
+}) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{name}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{position}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{title}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
+      {description}
+    </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       <div
         className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-          status === "Active" ? "text-white font-bold dark:bg-green-400" : "text-white font-bold dark:bg-red-400"
+          status === "In progress"
+            ? "text-white font-bold dark:bg-green-400"
+            : status === "Finished"
+            ? "text-white font-bold dark:bg-red-400"
+            : "text-white font-bold dark:bg-yellow-400"
         }`}
       >
         {status}
       </div>
     </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{age}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{date.getDate()}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{salary}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
+      {start.toDateString()}
+    </td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
   </tr>
 );
 
@@ -97,7 +87,9 @@ const Table: FC = () => {
   return (
     <section className="container px-4 mx-auto w-full mt-4">
       <div className="mb-6">
-        <span className="text-[#192231] font-bold text-2xl">Latest Transactions</span>
+        <span className="text-[#192231] font-bold text-2xl">
+          Project Progress
+        </span>
       </div>
       <div className="flex flex-col">
         <div className="overflow-x-auto">

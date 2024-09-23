@@ -3,18 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build && tauri build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "tauri": "tauri",
-    "dev": "next dev",
+    "tauri:build": "tauri build",
     "devv": "concurrently \"npm run dev\" \"npm run tauri:dev\"",
     "tauri:dev": "tauri dev"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "framer-motion": "^11.3.5",
-    "next": "14.2.3",
+    "next": "^14.2.13",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1"
