@@ -12,18 +12,25 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/components/*": ["./src/app/components/*"],
+      "@/pages/*": ["./src/app/pages/*"],
+      "@/app/*": ["./src/app/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/*": ["/*"]
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "baseUrl": "./",
-    "paths": {
-      "@/components/*": ["src/app/components/*"],
-      "@/pages/*": ["src/app/*"],
-      "@/*": ["src/*"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules", "src-tauri"]
 }

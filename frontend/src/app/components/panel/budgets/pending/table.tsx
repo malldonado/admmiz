@@ -6,7 +6,7 @@ interface User {
   id: string;
   title: string;
   description: string;
-  status: "Em andamento" | "Terminado" | "Parado";
+  status: "In progress" | "Finished" | "Stopped";
   start: Date;
   days: number;
   revenue: number;
@@ -16,22 +16,22 @@ interface User {
 const users: User[] = [
   {
     id: "1",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Em andamento",
+    title: "House Alphaville",
+    description: "House the 2000 sq. ft. house",
+    status: "In progress",
     start: new Date("2021-04-01"),
     days: 23,
-    revenue: 23000.50,
-    value: 42450.55
+    revenue: 23000.5,
+    value: 42450.55,
   },
   {
     id: "2",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Parado",
+    title: "Nathalia Silva",
+    description: "Python Developer",
+    status: "Finished",
     start: new Date("2023-08-15"),
     days: 28,
-    revenue: 23000.50,
+    revenue: 23000.5,
     value: 45000,
   },
 ];
@@ -39,17 +39,24 @@ const users: User[] = [
 const TableHeader: FC = () => (
   <thead className="bg-gray-50 dark:bg-gray-200">
     <tr>
-      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
-        (header) => (
-          <th
-            key={header}
-            scope="col"
-            className="px-4 py-3.5 text-base font-normal text-left rtl:text-right text-black"
-          >
-            {header}
-          </th>
-        )
-      )}
+      {[
+        "Title",
+        "Description",
+        "Status",
+        "Start",
+        "Days",
+        "Revenue (R$)",
+        "Value (R$)",
+        "Action",
+      ].map((header) => (
+        <th
+          key={header}
+          scope="col"
+          className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-black"
+        >
+          {header}
+        </th>
+      ))}
     </tr>
   </thead>
 );
@@ -70,12 +77,12 @@ const TableRow: FC<User> = ({
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       <div
-        className={` ${
-          status === "Em andamento"
-            ? "text-green-700 font-bold"
-            : status === "Terminado"
-            ? "text-red-700 font-bold"
-            : "text-blue-700 font-bold"
+        className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+          status === "In progress"
+            ? "text-white font-bold dark:bg-green-400"
+            : status === "Finished"
+            ? "text-white font-bold dark:bg-red-400"
+            : "text-white font-bold dark:bg-yellow-400"
         }`}
       >
         {status}
@@ -85,7 +92,9 @@ const TableRow: FC<User> = ({
       {start.toDateString()}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
+      {revenue}
+    </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
       <FiEdit

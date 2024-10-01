@@ -7,26 +7,26 @@ const Sales: React.FC = () => {
   const salesData = [
     {
       amount: "R$ 120.000,60",
-      label: "Total Billing",
-      percentage: "+9.23% from previous period the 30 days ago",
+      label: "Faturamento Total",
+      percentage: "+9,23% em relação ao período anterior, há 30 dias",
       icon: <BiMoneyWithdraw />,
     },
     {
       amount: "R$ 20.000,00",
-      label: "Expenses",
-      percentage: "-1.09% from previous period the 30 days ago",
+      label: "Despesas",
+      percentage: "-1,09% em relação ao período anterior de 30 dias atrás",
       icon: <BiMoneyWithdraw />,
     },
     {
       amount: "1",
-      label: "Ongoing Projects",
-      percentage: "+16.2% from previous period the 30 days ago",
+      label: "Projetos em Andamento",
+      percentage: "+16,2% em relação ao período anterior, há 30 dias",
       icon: <PiProjectorScreenChart />,
     },
     {
       amount: "3",
-      label: "Projects Completed",
-      percentage: "0.8% from previous period the 30 days ago",
+      label: "Projetos Concluídos",
+      percentage: "0,8% em relação ao período anterior de 30 dias atrás",
       icon: <PiProjectorScreenChart />,
     },
   ];

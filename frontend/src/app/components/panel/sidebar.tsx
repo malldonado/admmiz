@@ -28,78 +28,78 @@ const NavbarItems: NavbarItem[] = [
     icon: (
       <RxDashboard className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Dashboard",
+    text: "Início",
     link: "/pages/dashboard",
   },
   {
     icon: (
       <PiProjectorScreenChart className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Projects",
+    text: "Projetos",
     link: "",
     subcategories: [
-      { text: "All Projects", link: "/pages/project/all" },
-      { text: "New Project", link: "/pages/project/new" },
-      { text: "Project Reports", link: "/pages/project/reports" },
+      { text: "Todos Projetos", link: "/pages/project/all" },
+      { text: "Novo Projeto", link: "/pages/project/new" },
+      { text: "Relatórios de Projetos", link: "/pages/project/reports" },
     ],
   },
   {
     icon: (
       <LiaFileInvoiceDollarSolid className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Budgets",
+    text: "Orçamentos",
     link: "",
     subcategories: [
-      { text: "Manage Budgets", link: "/pages/budgets/manage" },
-      { text: "Pending Budgets", link: "/pages/budgets/pending" },
-      { text: "Budget Comparison", link: "/pages/budgets/comparison" },
+      { text: "Gerenciar Orçamentos", link: "/pages/budgets/manage" },
+      { text: "Orçamentos Pendentes", link: "/pages/budgets/pending" },
+      { text: "Comparação de Orçamento", link: "/pages/budgets/comparison" },
     ],
   },
   {
     icon: (
       <MdOutlineAttachMoney className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Finance",
+    text: "Finanças",
     link: "",
     subcategories: [
-      { text: "Expenses", link: "/pages/finance/expenses" },
-      { text: "Revenues", link: "/pages/finance/revenues" },
-      { text: "Financial Reports", link: "/pages/finance/reports" },
+      { text: "Despesas", link: "/pages/finance/expenses" },
+      { text: "Receitas", link: "/pages/finance/revenues" },
+      { text: "Relatórios Financeiros", link: "/pages/finance/reports" },
     ],
   },
   {
     icon: (
       <HiOutlineArchiveBox className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Materials and Stock",
+    text: "Materiais e Estoque",
     link: "",
     subcategories: [
-      { text: "Inventory", link: "/pages/stock/inventory" },
-      { text: "Purchase Orders", link: "/pages/stock/purchase" },
-      { text: "Suppliers", link: "/pages/stock/suppliers" },
+      { text: "Inventário", link: "/pages/stock/inventory" },
+      { text: "Ordens de Compra", link: "/pages/stock/purchase" },
+      { text: "Fornecedores", link: "/pages/stock/suppliers" },
     ],
   },
   {
     icon: (
       <SlPeople className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Contributors",
+    text: "Contribuidores",
     link: "",
     subcategories: [
-      { text: "Team", link: "/pages/contributors/team" },
-      { text: "Hours Worked", link: "/pages/contributors/hoursworked" },
-      { text: "Responsibilities", link: "/pages/contributors/responsibilities" },
+      { text: "Equipe", link: "/pages/contributors/team" },
+      { text: "Horas Trabalhadas", link: "/pages/contributors/hoursworked" },
+      { text: "Responsabilidades", link: "/pages/contributors/responsibilities" },
     ],
   },
   {
     icon: (
       <MdTaskAlt className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Tasks",
+    text: "Tarefas",
     link: "",
     subcategories: [
-      { text: "Active Tasks", link: "/pages/tasks/active" },
-      { text: "New Task", link: "/pages/tasks/new" },
+      { text: "Tarefas Ativas", link: "/pages/tasks/active" },
+      { text: "Nova Tarefa", link: "/pages/tasks/new" },
       { text: "Agenda", link: "/pages/tasks/agenda" },
     ],
   },
@@ -107,35 +107,35 @@ const NavbarItems: NavbarItem[] = [
     icon: (
       <IoDocumentTextOutline className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Documents",
+    text: "Documentos",
     link: "",
     subcategories: [
-      { text: "Files", link: "/pages/documents/files" },
-      { text: "Recent Documents", link: "/pages/documents/recent" },
-      { text: "License Management", link: "/pages/documents/license" },
+      { text: "Arquivos", link: "/pages/documents/files" },
+      { text: "Documentos Recentes", link: "/pages/documents/recent" },
+      { text: "Gerenciamento de Licenças", link: "/pages/documents/license" },
     ],
   },
   {
     icon: (
       <HiOutlineDocumentReport className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Reports",
+    text: "Relatórios",
     link: "",
     subcategories: [
-      { text: "Project Reports", link: "/pages/reports/project" },
-      { text: "Financial Reports", link: "/pages/reports/finance" },
-      { text: "Stock Reports", link: "/pages/reports/stock" },
+      { text: "Relatórios de Projetos", link: "/pages/reports/project" },
+      { text: "Relatórios Financeiros", link: "/pages/reports/finance" },
+      { text: "Relatórios de Ações", link: "/pages/reports/stock" },
     ],
   },
   {
     icon: (
       <FiSettings className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Settings",
+    text: "Configurações",
     link: "",
     subcategories: [
-      { text: "System Preferences", link: "/pages/settings/system" },
-      { text: "User Permissions", link: "/pages/settings/permissions" },
+      { text: "Preferências do Sistema", link: "/pages/settings/system" },
+      { text: "Permissões do Usuário", link: "/pages/settings/permissions" },
     ],
   },
 ];

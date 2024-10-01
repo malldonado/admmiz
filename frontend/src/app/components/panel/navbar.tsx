@@ -15,59 +15,59 @@ const Navbar: React.FC = () => {
   const getTitle = () => {
     switch (pathname) {
       case "/pages/dashboard":
-        return "Dashboard";
+        return "Início";
       case "/pages/project/all":
-        return "All Projects";
+        return "Todos Projetos";
       case '/pages/project/new':
-        return "New Project";
+        return "Novo Projeto";
       case '/pages/project/reports':
-        return "Project Reports";
+        return "Relatórios de Projetos";
       case '/pages/budgets/manage':
-        return "Manage Budgets";
+        return "Gerenciar Orçamentos";
       case '/pages/budgets/pending':
-        return "Pending Budgets";
+        return "Orçamentos Pendentes";
       case '/pages/budgets/comparison':
-        return "Budget Comparison";
+        return "Comparação de Orçamento";
       case '/pages/finance/expenses':
-        return "Expenses";
+        return "Despesas";
       case '/pages/finance/revenues':
-        return "Revenues";
+        return "Receitas";
       case '/pages/finance/reports':
-        return "Financial Reports";
+        return "Relatórios Financeiros";
       case '/pages/stock/inventory':
-        return "Inventory";
+        return "Inventário";
       case '/pages/stock/purchase':
-        return "Purchase Orders";
+        return "Ordens de compra";
       case '/pages/stock/suppliers':
-        return "Suppliers";
+        return "Fornecedores";
       case '/pages/contributors/team':
-        return "Team";
+        return "Equipe";
       case '/pages/contributors/hoursworked':
-        return "Hours Worked";
+        return "Horas Trabalhadas";
       case '/pages/contributors/responsibilities':
-        return "Responsibilities";
+        return "Responsabilidades";
       case '/pages/tasks/active':
-        return "Active Tasks";
+        return "Tarefas Ativas";
       case '/pages/tasks/new':
-        return "New Task";
+        return "Nova Tarefa";
       case '/pages/tasks/agenda':
         return "Agenda";
       case '/pages/documents/files':
-        return "Files";
+        return "Arquivos";
       case '/pages/documents/recent':
-        return "Recent Documents";
+        return "Documentos Recentes";
       case '/pages/documents/license':
-        return "License Management";
+        return "Gerenciamento de Licenças";
       case '/pages/reports/project':
-        return "Project Reports";
+        return "Relatórios de Projetos";
       case '/pages/reports/finance':
-        return "Financial Reports";
+        return "Relatórios Financeiros";
       case '/pages/reports/stock':
-        return "Stock Reports";
+        return "Relatórios de Ações";
       case '/pages/settings/system':
-        return "System Preferences";
+        return "Preferências do Sistema";
       case '/pages/settings/permissions':
-        return "User Permissions";
+        return "Permissões do Usuário";
       default:
         return "";
     }

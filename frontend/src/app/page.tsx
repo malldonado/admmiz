@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Loading from '@/pages/loading';
-import LoginPage from '@/pages/pages/auth/login/page';
+import Loading from '@/app/loading';
+import LoginPage from '@/app/pages/auth/login/page';
 
 const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);

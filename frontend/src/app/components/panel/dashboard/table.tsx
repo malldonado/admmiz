@@ -4,29 +4,32 @@ interface User {
   id: string;
   title: string;
   description: string;
-  status: "In progress" | "Finished" | "Stopped";
+  status: "Em andamento" | "Terminado" | "Parado";
   start: Date;
   days: number;
+  revenue: number;
   value: number;
 }
 
 const users: User[] = [
   {
     id: "1",
-    title: "House Alphaville",
-    description: "House the 2000 sq. ft. house",
-    status: "In progress",
+    title: "Casa Alphaville",
+    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
+    status: "Em andamento",
     start: new Date("2021-04-01"),
     days: 23,
-    value: 42450,
+    revenue: 23000.50,
+    value: 42450.55
   },
   {
     id: "2",
-    title: "Nathalia Silva",
-    description: "Python Developer",
-    status: "Finished",
+    title: "Casa Alphaville",
+    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
+    status: "Parado",
     start: new Date("2023-08-15"),
     days: 28,
+    revenue: 23000.50,
     value: 45000,
   },
 ];
@@ -34,12 +37,12 @@ const users: User[] = [
 const TableHeader: FC = () => (
   <thead className="bg-gray-50 dark:bg-gray-200">
     <tr>
-      {["Title", "Description", "Status", "Start", "Days", "Value (R$)"].map(
+      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)"].map(
         (header) => (
           <th
             key={header}
             scope="col"
-            className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-black"
+            className="px-4 py-3.5 text-base font-normal text-left rtl:text-right text-black"
           >
             {header}
           </th>
@@ -55,6 +58,7 @@ const TableRow: FC<User> = ({
   status,
   start,
   days,
+  revenue,
   value,
 }) => (
   <tr>
@@ -64,12 +68,12 @@ const TableRow: FC<User> = ({
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       <div
-        className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-          status === "In progress"
-            ? "text-white font-bold dark:bg-green-400"
-            : status === "Finished"
-            ? "text-white font-bold dark:bg-red-400"
-            : "text-white font-bold dark:bg-yellow-400"
+        className={` ${
+          status === "Em andamento"
+            ? "text-green-700 font-bold"
+            : status === "Terminado"
+            ? "text-red-700 font-bold"
+            : "text-blue-700 font-bold"
         }`}
       >
         {status}
@@ -79,6 +83,7 @@ const TableRow: FC<User> = ({
       {start.toDateString()}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
   </tr>
 );
@@ -88,7 +93,7 @@ const Table: FC = () => {
     <section className="container px-4 mx-auto w-full mt-4">
       <div className="mb-6">
         <span className="text-[#192231] font-bold text-2xl">
-          Project Progress
+          Progresso dos Projetos
         </span>
       </div>
       <div className="flex flex-col">
