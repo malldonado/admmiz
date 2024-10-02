@@ -26,8 +26,8 @@ const Navbar: React.FC = () => {
         return "Gerenciar Orçamentos";
       case '/pages/budgets/pending':
         return "Orçamentos Pendentes";
-      case '/pages/budgets/comparison':
-        return "Comparação de Orçamento";
+      case '/pages/budgets/new':
+        return "Novo Orçamento";
       case '/pages/finance/expenses':
         return "Despesas";
       case '/pages/finance/revenues':

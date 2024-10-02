@@ -50,9 +50,9 @@ const NavbarItems: NavbarItem[] = [
     text: "Orçamentos",
     link: "",
     subcategories: [
+      { text: "Novo Orçamento", link: "/pages/budgets/new" },
       { text: "Gerenciar Orçamentos", link: "/pages/budgets/manage" },
       { text: "Orçamentos Pendentes", link: "/pages/budgets/pending" },
-      { text: "Comparação de Orçamento", link: "/pages/budgets/comparison" },
     ],
   },
   {
