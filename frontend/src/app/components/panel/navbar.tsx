@@ -20,6 +20,8 @@ const Navbar: React.FC = () => {
         return "Todos Projetos";
       case '/pages/project/new':
         return "Novo Projeto";
+      case '/pages/project/edit':
+        return "Editar Projeto";
       case '/pages/project/reports':
         return "Relatórios de Projetos";
       case '/pages/budgets/manage':

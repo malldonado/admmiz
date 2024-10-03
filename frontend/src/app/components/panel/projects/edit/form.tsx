@@ -25,7 +25,7 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div className="bg-white px-8 pt-6 pb-8 mb-4 flex flex-col my-2 mx-12">
+    <div className="bg-white pt-6 pb-8 mb-4 flex flex-col my-2 mx-4">
       <form onSubmit={handleSubmit}>
         <div className="-mx-3 md:flex mb-6">
           <div className="md:w-1/2 px-3 mb-6 md:mb-0">

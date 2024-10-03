@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin7Line } from "react-icons/ri";
+import NextLink from "next/link";
 
 interface User {
   id: string;
@@ -88,10 +89,12 @@ const TableRow: FC<User> = ({
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
-      <FiEdit
-        className="cursor-pointer text-lg mr-2
-    "
-      />
+      <NextLink href='/pages/project/edit'>
+        <FiEdit
+          className="cursor-pointer text-lg mr-2
+      "
+        />
+      </NextLink>
       <RiDeleteBin7Line className="cursor-pointer text-xl
     "/>
     </td>

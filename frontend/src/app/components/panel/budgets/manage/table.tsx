@@ -1,12 +1,13 @@
 import { FC } from "react";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin7Line } from "react-icons/ri";
+import NextLink from "next/link";
 
 interface User {
   id: string;
   title: string;
   description: string;
-  status: "In progress" | "Finished" | "Stopped";
+  status: "Em andamento" | "Terminado" | "Parado";
   start: Date;
   days: number;
   revenue: number;
@@ -16,22 +17,22 @@ interface User {
 const users: User[] = [
   {
     id: "1",
-    title: "House Alphaville",
-    description: "House the 2000 sq. ft. house",
-    status: "In progress",
+    title: "Casa Alphaville",
+    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
+    status: "Em andamento",
     start: new Date("2021-04-01"),
     days: 23,
-    revenue: 23000.5,
-    value: 42450.55,
+    revenue: 23000.50,
+    value: 42450.55
   },
   {
     id: "2",
-    title: "Nathalia Silva",
-    description: "Python Developer",
-    status: "Finished",
+    title: "Casa Alphaville",
+    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
+    status: "Parado",
     start: new Date("2023-08-15"),
     days: 28,
-    revenue: 23000.5,
+    revenue: 23000.50,
     value: 45000,
   },
 ];
@@ -39,24 +40,17 @@ const users: User[] = [
 const TableHeader: FC = () => (
   <thead className="bg-gray-50 dark:bg-gray-200">
     <tr>
-      {[
-        "Title",
-        "Description",
-        "Status",
-        "Start",
-        "Days",
-        "Revenue (R$)",
-        "Value (R$)",
-        "Action",
-      ].map((header) => (
-        <th
-          key={header}
-          scope="col"
-          className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-black"
-        >
-          {header}
-        </th>
-      ))}
+      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
+        (header) => (
+          <th
+            key={header}
+            scope="col"
+            className="px-4 py-3.5 text-base font-normal text-left rtl:text-right text-black"
+          >
+            {header}
+          </th>
+        )
+      )}
     </tr>
   </thead>
 );
@@ -77,12 +71,12 @@ const TableRow: FC<User> = ({
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       <div
-        className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-          status === "In progress"
-            ? "text-white font-bold dark:bg-green-400"
-            : status === "Finished"
-            ? "text-white font-bold dark:bg-red-400"
-            : "text-white font-bold dark:bg-yellow-400"
+        className={` ${
+          status === "Em andamento"
+            ? "text-green-700 font-bold"
+            : status === "Terminado"
+            ? "text-red-700 font-bold"
+            : "text-blue-700 font-bold"
         }`}
       >
         {status}
@@ -92,15 +86,15 @@ const TableRow: FC<User> = ({
       {start.toDateString()}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {revenue}
-    </td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
-      <FiEdit
-        className="cursor-pointer text-lg mr-2
-    "
-      />
+      <NextLink href='/pages/project/edit'>
+        <FiEdit
+          className="cursor-pointer text-lg mr-2
+      "
+        />
+      </NextLink>
       <RiDeleteBin7Line className="cursor-pointer text-xl
     "/>
     </td>

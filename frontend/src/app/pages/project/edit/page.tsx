@@ -2,9 +2,9 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
-import Form from '@/components/panel/projects/new/form';
+import Form from '@/components/panel/projects/edit/form';
 
-const ProjectEdit: React.FC = () => {
+const ProjectNew: React.FC = () => {
   return (
     <div className="h-full m-0 p-0 overflow-hidden flex justify-center contain bg-[#192231]">
       <Sidebar />
@@ -16,4 +16,4 @@ const ProjectEdit: React.FC = () => {
   );
 }
 
-export default ProjectEdit;
+export default ProjectNew;

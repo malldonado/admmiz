@@ -40,7 +40,7 @@ const NavbarItems: NavbarItem[] = [
     subcategories: [
       { text: "Todos Projetos", link: "/pages/project/all" },
       { text: "Novo Projeto", link: "/pages/project/new" },
-      { text: "Relatórios de Projetos", link: "/pages/project/reports" },
+      // { text: "Relatórios de Projetos", link: "/pages/project/reports" },
     ],
   },
   {
@@ -64,7 +64,7 @@ const NavbarItems: NavbarItem[] = [
     subcategories: [
       { text: "Despesas", link: "/pages/finance/expenses" },
       { text: "Receitas", link: "/pages/finance/revenues" },
-      { text: "Relatórios Financeiros", link: "/pages/finance/reports" },
+      // { text: "Relatórios Financeiros", link: "/pages/finance/reports" },
     ],
   },
   {
@@ -157,7 +157,7 @@ const Sidebar: React.FC = () => {
   return (
     <div className="font-main h-full">
       <div
-        className={`lg:w-[256px] h-screen mx-auto ${
+        className={`lg:w-[260px] h-screen mx-auto ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 transform transition-transform duration-300 ease-in-out`}
       >
@@ -168,7 +168,7 @@ const Sidebar: React.FC = () => {
                 <li key={index}>
                   <NextLink href={item.link}>
                     <div
-                      className="flex items-center justify-between px-2 py-3 my-2 text-[14px] font-[600] font-main rounded-lg text-white hover:bg-[#315bd4] focus:text-white cursor-pointer"
+                      className="flex items-center justify-between px-2 py-3 my-2 text-[13px] font-[600] font-main rounded-lg text-white hover:bg-[#315bd4] focus:text-white cursor-pointer"
                       onClick={() => {
                         setIsSidebarOpen(false);
                         if (item.subcategories) toggleSubcategories(item.text);
