@@ -2,92 +2,25 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { View, Text } from "react-native";
+import HomeScreen from "./pages/HomeScreen";
+import ProjectScreen from "./pages/ProjectScreen";
+import BudgetsScreen from "./pages/BudgetsScreen";
+import FinanceScreen from "./pages/FinanceScreen";
+import StockScreen from "./pages/StockScreen";
+import ContributorsScreen from "./pages/ContributorsScreen";
+import TasksScreen from "./pages/TasksScreen";
+import DocumentsScreen from "./pages/DocumentsScreen";
+import ReportsScreen from "./pages/ReportsScreen";
+import SettingsScreen from "./pages/SettingsScreen";
+import { useFonts, Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
 
-// Definindo as telas
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Início</Text>
-    </View>
-  );
-}
-
-function ProjectScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Projeto</Text>
-    </View>
-  );
-}
-
-function BudgetsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Projeto</Text>
-    </View>
-  );
-}
-
-function FinanceScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Projeto</Text>
-    </View>
-  );
-}
-
-function StockScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Projeto</Text>
-    </View>
-  );
-}
-
-function ContributorsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Projeto</Text>
-    </View>
-  );
-}
-
-function TasksScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Projeto</Text>
-    </View>
-  );
-}
-
-function DocumentsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Projeto</Text>
-    </View>
-  );
-}
-
-function ReportsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Projeto</Text>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Configurações</Text>
-    </View>
-  );
-}
-
-// Criando o Drawer Navigator
 const Drawer = createDrawerNavigator();
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Nunito_400Regular,
+    Nunito_700Bold,
+  });
   return (
     <NavigationContainer>
       <Drawer.Navigator
