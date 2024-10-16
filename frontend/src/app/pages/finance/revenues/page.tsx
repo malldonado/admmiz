@@ -5,6 +5,7 @@ import Navbar from '@/components/panel/navbar';
 import { Chart } from '@/components/panel/expenses/chart';
 import { Chart2 } from '@/components/panel/expenses/chart2';
 import { Chart3 } from '@/components/panel/expenses/chart3';
+import Table from '@/components/panel/finance/revenue/table';
 
 const FinanceRevenues: React.FC = () => {
   return (
@@ -14,9 +15,10 @@ const FinanceRevenues: React.FC = () => {
         <Navbar/>
         <div className='flex'>
           <Chart />
-          <Chart3 />
           <Chart2 />
+          <Chart3 />
         </div>
+        <Table/>
       </div>
     </div>
   );

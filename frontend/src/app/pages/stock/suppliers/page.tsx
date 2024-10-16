@@ -2,6 +2,7 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
+import Table from '@/components/panel/stock/suppliers/table';
 
 const StockSuppliers: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const StockSuppliers: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white">
         <Navbar/>
+        <Table/>
       </div>
     </div>
   );
