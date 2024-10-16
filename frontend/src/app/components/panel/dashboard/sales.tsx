@@ -32,7 +32,7 @@ const Sales: React.FC = () => {
   ];
 
   return (
-    <div className="container px-4 mx-auto bg-white mt-2 py-2 h-48 rounded-xl flex flex-col justify-between">
+    <div className="px-4 mx-auto bg-white mt-2 py-2 h-48 rounded-xl flex flex-col justify-between">
       <div className="grid grid-cols-4 gap-4">
         {salesData.map(({ amount, label, percentage, icon }) => (
           <SalesItem
@@ -61,7 +61,7 @@ const SalesItem: React.FC<SalesItemProps> = ({
   percentage,
   icon,
 }) => (
-  <div className="bg-[#e5e7eb] text-black p-4 rounded-xl w-96">
+  <div className="bg-[#e5e7eb] text-black p-4 rounded-xl w-full">
     <div className="flex flex-col h-full justify-center">
       {icon && <div className="mt-2 text-2xl text-black">{icon}</div>}
       <span className="text-2xl font-bold mt-2">{amount}</span>

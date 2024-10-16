@@ -79,8 +79,8 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="flex flex-wrap">
-      <div className="mb-2 mx-auto w-11/12 bg-white h-20">
-        <div className="sm:flex items-stretch justify-between grow lg:mb-0 py-5 px-3">
+      <div className="mb-2 mx-auto w-full bg-white h-20">
+        <div className="sm:flex items-stretch justify-between grow lg:mb-0 py-5 px-4">
           <div className="flex flex-col flex-wrap justify-center mb-5 mr-3 lg:mb-0">
             <span className="my-0 flex text-dark flex-col justify-center text-[#192231] font-bold text-2xl">
               {getTitle()}

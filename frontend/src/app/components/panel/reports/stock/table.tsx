@@ -1,4 +1,7 @@
 import { FC } from "react";
+import { FiEdit } from "react-icons/fi";
+import { RiDeleteBin7Line } from "react-icons/ri";
+import { HiOutlineDocumentReport } from "react-icons/hi";
 
 interface User {
   id: string;
@@ -37,7 +40,7 @@ const users: User[] = [
 const TableHeader: FC = () => (
   <thead className="bg-gray-50 dark:bg-gray-200">
     <tr>
-      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)"].map(
+      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
         (header) => (
           <th
             key={header}
@@ -85,17 +88,15 @@ const TableRow: FC<User> = ({
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
+      <HiOutlineDocumentReport className="cursor-pointer text-xl" />
+    </td>
   </tr>
 );
 
 const Table: FC = () => {
   return (
-    <section className="px-4 mx-auto w-full mt-4">
-      <div className="mb-6">
-        <span className="text-[#192231] font-bold text-2xl">
-          Progresso dos Projetos
-        </span>
-      </div>
+    <section className="container px-4 mx-auto w-full mt-4">
       <div className="flex flex-col">
         <div className="overflow-x-auto">
           <div className="inline-block w-full py-2 align-middle">

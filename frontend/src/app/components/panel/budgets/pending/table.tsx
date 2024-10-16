@@ -103,7 +103,7 @@ const TableRow: FC<User> = ({
 
 const Table: FC = () => {
   return (
-    <section className="container px-4 mx-auto w-full mt-4">
+    <section className="px-4 mx-auto w-full mt-4">
       <div className="flex flex-col">
         <div className="overflow-x-auto">
           <div className="inline-block w-full py-2 align-middle">

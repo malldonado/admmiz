@@ -2,6 +2,8 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
+import Table from '@/components/panel/contributors/team/table';
+import Button from '@/components/panel/contributors/team/button';
 
 const ContributorsTeam: React.FC = () => {
   return (
@@ -9,6 +11,8 @@ const ContributorsTeam: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white">
         <Navbar/>
+        <Button/>
+        <Table/>
       </div>
     </div>
   );

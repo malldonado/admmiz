@@ -3,6 +3,7 @@ import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
 import Table from '@/components/panel/finance/expenses/table';
+import Button from '@/components/panel/finance/expenses/button';
 
 const FinanceExpenses: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const FinanceExpenses: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white">
         <Navbar/>
+        <Button/>
         <Table/>
       </div>
     </div>
