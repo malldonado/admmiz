@@ -12,13 +12,13 @@ const FinanceRevenues: React.FC = () => {
     <div className="h-full m-0 p-0 overflow-hidden flex justify-center contain bg-[#192231]">
       <Sidebar />
       <div className="relative h-auto w-full bg-white">
-        <Navbar/>
+        <Navbar />
         <div className='flex'>
           <Chart />
           <Chart2 />
           <Chart3 />
         </div>
-        <Table/>
+        <Table />
       </div>
     </div>
   );

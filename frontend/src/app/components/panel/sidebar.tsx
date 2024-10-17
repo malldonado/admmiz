@@ -39,7 +39,7 @@ const NavbarItems: NavbarItem[] = [
     link: "",
     subcategories: [
       { text: "Todos Projetos", link: "/pages/project/all" },
-      { text: "Novo Projeto", link: "/pages/project/new" },
+      // { text: "Novo Projeto", link: "/pages/project/new" },
       // { text: "Relatórios de Projetos", link: "/pages/project/reports" },
     ],
   },
@@ -50,7 +50,7 @@ const NavbarItems: NavbarItem[] = [
     text: "Orçamentos",
     link: "",
     subcategories: [
-      { text: "Novo Orçamento", link: "/pages/budgets/new" },
+      // { text: "Novo Orçamento", link: "/pages/budgets/new" },
       { text: "Gerenciar Orçamentos", link: "/pages/budgets/manage" },
       { text: "Orçamentos Pendentes", link: "/pages/budgets/pending" },
     ],
@@ -88,7 +88,7 @@ const NavbarItems: NavbarItem[] = [
     subcategories: [
       { text: "Equipe", link: "/pages/contributors/team" },
       { text: "Horas Trabalhadas", link: "/pages/contributors/hoursworked" },
-      { text: "Responsabilidades", link: "/pages/contributors/responsibilities" },
+      // { text: "Responsabilidades", link: "/pages/contributors/responsibilities" },
     ],
   },
   {
@@ -99,7 +99,7 @@ const NavbarItems: NavbarItem[] = [
     link: "",
     subcategories: [
       { text: "Tarefas Ativas", link: "/pages/tasks/active" },
-      { text: "Nova Tarefa", link: "/pages/tasks/new" },
+      // { text: "Nova Tarefa", link: "/pages/tasks/new" },
       { text: "Agenda", link: "/pages/tasks/agenda" },
     ],
   },
@@ -112,7 +112,7 @@ const NavbarItems: NavbarItem[] = [
     subcategories: [
       { text: "Arquivos", link: "/pages/documents/files" },
       { text: "Documentos Recentes", link: "/pages/documents/recent" },
-      { text: "Gerenciamento de Licenças", link: "/pages/documents/license" },
+      { text: "Licenças", link: "/pages/documents/license" },
     ],
   },
   {
