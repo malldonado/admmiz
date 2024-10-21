@@ -4,3 +4,7 @@ rm -rf .next
 running project
 yarn build
 npx serve@latest out
+
+tasks
+colocar uma opção de emitir nota fiscal
+colocar para montar contrato

@@ -38,7 +38,7 @@ const users: User[] = [
 ];
 
 const TableHeader: FC = () => (
-  <thead className="bg-gray-50 dark:bg-gray-200">
+  <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
       {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
         (header) => (

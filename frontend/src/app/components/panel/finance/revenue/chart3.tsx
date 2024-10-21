@@ -49,7 +49,7 @@ const chartConfig = {
 
 export function Chart3() {
   return (
-    <Card className="flex flex-col border-none w-full shadow-none h-full">
+    <Card className="flex flex-col border-none w-1/3">
       <CardHeader className="items-center pb-0">
         <CardTitle>Gasto mensais</CardTitle>
         <CardDescription>Últimos 30 dias</CardDescription>
@@ -81,10 +81,10 @@ export function Chart3() {
           </PieChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col gap-2 text-lg">
-        <div className="flex items-center gap-2 font-medium leading-none">
-        +16,2% de gastos no mês de agosto
-        </div>
+      <CardFooter className="flex-col items-start gap-2 text-lg">
+          <div className="flex gap-2 font-medium leading-none">
+            +9,23% em relação ao período de 6 meses
+          </div>
       </CardFooter>
     </Card>
   )

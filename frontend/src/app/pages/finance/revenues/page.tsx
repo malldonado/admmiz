@@ -2,9 +2,9 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
-import { Chart } from '@/components/panel/expenses/chart';
-import { Chart2 } from '@/components/panel/expenses/chart2';
-import { Chart3 } from '@/components/panel/expenses/chart3';
+import { Chart } from '@/components/panel/finance/revenue/chart';
+import { Chart2 } from '@/components/panel/finance/revenue/chart2';
+import { Chart3 } from '@/components/panel/finance/revenue/chart3';
 import Table from '@/components/panel/finance/revenue/table';
 
 const FinanceRevenues: React.FC = () => {
@@ -18,7 +18,7 @@ const FinanceRevenues: React.FC = () => {
           <Chart2 />
           <Chart3 />
         </div>
-        <Table />
+        {/* <Table /> */}
       </div>
     </div>
   );

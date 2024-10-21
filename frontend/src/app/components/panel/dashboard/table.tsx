@@ -35,7 +35,7 @@ const users: User[] = [
 ];
 
 const TableHeader: FC = () => (
-  <thead className="bg-gray-50 dark:bg-gray-200">
+  <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
       {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)"].map(
         (header) => (
@@ -99,10 +99,10 @@ const Table: FC = () => {
       <div className="flex flex-col">
         <div className="overflow-x-auto">
           <div className="inline-block w-full py-2 align-middle">
-            <div className="overflow-hidden border border-gray-200 md:rounded-xl">
-              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-200">
+            <div className="overflow-hidden border border-gray-300 md:rounded-xl">
+              <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-300">
                 <TableHeader />
-                <tbody className="bg-white divide-y divide-gray-200 dark:bg-transparent dark:divide-gray-200">
+                <tbody className="bg-white divide-y divide-gray-300 dark:bg-transparent dark:divide-gray-300">
                   {users.map((user) => (
                     <TableRow key={user.id} {...user} />
                   ))}

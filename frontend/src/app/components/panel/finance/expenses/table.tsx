@@ -5,42 +5,30 @@ import NextLink from "next/link";
 
 interface User {
   id: string;
-  title: string;
+  date: Date;
   description: string;
-  status: "Em andamento" | "Terminado" | "Parado";
-  start: Date;
-  days: number;
-  revenue: number;
+  category: "Materias" | "Serviços Profissionais" | "Equipamentos";
   value: number;
+  paymentMethod: "Cartão de Crédito" | "Transferência Bancária" | "Boleto";
+  associatedProject: string;
 }
 
 const users: User[] = [
   {
     id: "1",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Em andamento",
-    start: new Date("2021-04-01"),
-    days: 23,
-    revenue: 23000.50,
-    value: 42450.55
-  },
-  {
-    id: "2",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Parado",
-    start: new Date("2023-08-15"),
-    days: 28,
-    revenue: 23000.50,
-    value: 45000,
-  },
+    date: new Date("2021-04-01"),
+    description: "Materiais de Construção",
+    category: 'Equipamentos',
+    value: 23000.50,
+    paymentMethod: "Cartão de Crédito",
+    associatedProject: "Construção de Edifício A",
+  }
 ];
 
 const TableHeader: FC = () => (
-  <thead className="bg-gray-50 dark:bg-gray-200">
+  <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
-      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
+      {["Data", "Descrição", "Categoria", "Valor", "Forma de Pagamento", "Projeto Associado", "Ação"].map(
         (header) => (
           <th
             key={header}
@@ -56,38 +44,24 @@ const TableHeader: FC = () => (
 );
 
 const TableRow: FC<User> = ({
-  title,
+  date,
   description,
-  status,
-  start,
-  days,
-  revenue,
+  category,
   value,
+  paymentMethod,
+  associatedProject,
 }) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{title}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{date.toDateString()}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       {description}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      <div
-        className={` ${
-          status === "Em andamento"
-            ? "text-green-700 font-bold"
-            : status === "Terminado"
-            ? "text-red-700 font-bold"
-            : "text-blue-700 font-bold"
-        }`}
-      >
-        {status}
-      </div>
+        {category}
     </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {start.toDateString()}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{paymentMethod}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{associatedProject}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
       <NextLink href='/pages/project/edit'>
         <FiEdit

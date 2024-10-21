@@ -24,7 +24,7 @@ const chartData = [
   { month: "Janeiro", desktop: 186 },
   { month: "Fevereiro", desktop: 305 },
   { month: "Março", desktop: 237 },
-  { month: "Abril", desktop: 73 },
+  { month: "Abriç", desktop: 73 },
   { month: "Maio", desktop: 209 },
   { month: "Junho", desktop: 214 },
 ];
@@ -38,8 +38,8 @@ const chartConfig = {
 
 export function Chart2() {
   return (
-    <div className="w-full shadow-none">
-      <Card className="border-none shadow-none">
+    <div className="w-1/3">
+      <Card className="border-none">
         <CardHeader>
           <CardTitle>Receita Liquida</CardTitle>
           <CardDescription>Janeiro - Junho 2024</CardDescription>

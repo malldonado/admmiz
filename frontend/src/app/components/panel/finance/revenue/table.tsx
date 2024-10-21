@@ -5,35 +5,23 @@ import NextLink from "next/link";
 
 interface User {
   id: string;
-  title: string;
-  description: string;
-  status: "Em andamento" | "Terminado" | "Parado";
-  start: Date;
+  dateRevenue: Date;
+  client: string;
+  serviceDescription: string;
+  value: number;
   days: number;
   revenue: number;
-  value: number;
 }
 
 const users: User[] = [
   {
     id: "1",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Em andamento",
-    start: new Date("2021-04-01"),
+    dateRevenue: new Date("2021-04-01"),
+    client: "João Silva",
+    serviceDescription: "Projeto Residencial",
+    value: 23000.50,
     days: 23,
     revenue: 23000.50,
-    value: 42450.55
-  },
-  {
-    id: "2",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Parado",
-    start: new Date("2023-08-15"),
-    days: 28,
-    revenue: 23000.50,
-    value: 45000,
   },
 ];
 
@@ -56,18 +44,17 @@ const TableHeader: FC = () => (
 );
 
 const TableRow: FC<User> = ({
-  title,
-  description,
-  status,
-  start,
-  days,
-  revenue,
+  dateRevenue,
+  client,
+  serviceDescription,
   value,
+  days,
+  revenue
 }) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{title}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{dateRevenue.toDateString()}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {description}
+      {client}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       <div
@@ -83,9 +70,9 @@ const TableRow: FC<User> = ({
       </div>
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {start.toDateString()}
+      {serviceDescription}
     </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">

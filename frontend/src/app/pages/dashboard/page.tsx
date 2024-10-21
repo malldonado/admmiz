@@ -17,7 +17,7 @@ const DashboardPage: React.FC = () => {
         <Sales />
         <div className="flex justify-between">
           <div className="w-[80%]">
-            <span className="text-[#192231] font-bold text-2xl ml-[20px]">
+            <span className="text-[#192231] font-bold text-2xl ml-[15px]">
               Finanças
             </span>
             <div className="mb-6 w-[100%] flex">
