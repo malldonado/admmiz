@@ -103,18 +103,18 @@ const NavbarItems: NavbarItem[] = [
       { text: "Agenda", link: "/pages/tasks/agenda" },
     ],
   },
-  {
-    icon: (
-      <IoDocumentTextOutline className="w-6 h-6 text-white transition duration-75 dark:text-white" />
-    ),
-    text: "Documentos",
-    link: "",
-    subcategories: [
-      { text: "Arquivos", link: "/pages/documents/files" },
-      { text: "Documentos Recentes", link: "/pages/documents/recent" },
-      { text: "Licenças", link: "/pages/documents/license" },
-    ],
-  },
+  // {
+  //   icon: (
+  //     <IoDocumentTextOutline className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+  //   ),
+  //   text: "Documentos",
+  //   link: "",
+  //   subcategories: [
+  //     { text: "Arquivos", link: "/pages/documents/files" },
+  //     { text: "Documentos Recentes", link: "/pages/documents/recent" },
+  //     { text: "Licenças", link: "/pages/documents/license" },
+  //   ],
+  // },
   {
     icon: (
       <HiOutlineDocumentReport className="w-6 h-6 text-white transition duration-75 dark:text-white" />

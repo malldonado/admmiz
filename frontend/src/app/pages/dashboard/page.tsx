@@ -30,7 +30,7 @@ const DashboardPage: React.FC = () => {
             </div>
           </div>
           <div className="w-[30%]">
-            <div className="mb-6 mb-6">
+            <div className="mb-6">
               <span className="text-[#192231] font-bold text-2xl">
                 Tarefas Ativas
               </span>

@@ -49,8 +49,8 @@ const chartConfig = {
 
 export function Chart() {
   return (
-    <Card className="flex flex-col border-none w-1/3">
-      <CardHeader className="items-center pb-0">
+    <Card className="flex flex-col border-none w-1/3 shadow-none">
+      <CardHeader className="items-left pb-0">
         <CardTitle>Gasto mensais</CardTitle>
         <CardDescription>Últimos 30 dias</CardDescription>
       </CardHeader>
@@ -81,7 +81,7 @@ export function Chart() {
           </PieChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-lg">
+      <CardFooter className="flex-col items-start gap-2 text-base">
           <div className="flex gap-2 font-medium leading-none">
             +9,23% em relação ao período de 6 meses
           </div>

@@ -18,13 +18,11 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-export const description = "A bar chart with a label";
-
 const chartData = [
   { month: "Janeiro", desktop: 186 },
   { month: "Fevereiro", desktop: 305 },
   { month: "Março", desktop: 237 },
-  { month: "Abriç", desktop: 73 },
+  { month: "Abril", desktop: 73 },
   { month: "Maio", desktop: 209 },
   { month: "Junho", desktop: 214 },
 ];
@@ -38,8 +36,8 @@ const chartConfig = {
 
 export function Chart2() {
   return (
-    <div className="w-1/3">
-      <Card className="border-none">
+    <div className="w-1/3 shadow-none">
+      <Card className="border-none shadow-none">
         <CardHeader>
           <CardTitle>Receita Liquida</CardTitle>
           <CardDescription>Janeiro - Junho 2024</CardDescription>
@@ -76,7 +74,7 @@ export function Chart2() {
             </BarChart>
           </ChartContainer>
         </CardContent>
-        <CardFooter className="flex-col items-start gap-2 text-lg">
+        <CardFooter className="flex-col items-start gap-2 text-base">
           <div className="flex gap-2 font-medium leading-none">
             +9,23% em relação ao período de 6 meses
           </div>

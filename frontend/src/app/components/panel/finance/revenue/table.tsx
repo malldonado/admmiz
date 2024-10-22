@@ -26,9 +26,9 @@ const users: User[] = [
 ];
 
 const TableHeader: FC = () => (
-  <thead className="bg-gray-50 dark:bg-gray-200">
+  <thead className="bg-gray-300 dark:bg-gray-300">
     <tr>
-      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
+      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Ação"].map(
         (header) => (
           <th
             key={header}
@@ -57,24 +57,11 @@ const TableRow: FC<User> = ({
       {client}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      <div
-        className={` ${
-          status === "Em andamento"
-            ? "text-green-700 font-bold"
-            : status === "Terminado"
-            ? "text-red-700 font-bold"
-            : "text-blue-700 font-bold"
-        }`}
-      >
-        {status}
-      </div>
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       {serviceDescription}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
       <NextLink href='/pages/project/edit'>
         <FiEdit

@@ -18,7 +18,7 @@ const FinanceRevenues: React.FC = () => {
           <Chart2 />
           <Chart3 />
         </div>
-        {/* <Table /> */}
+        <Table />
       </div>
     </div>
   );

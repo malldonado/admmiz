@@ -5,6 +5,21 @@ running project
 yarn build
 npx serve@latest out
 
-tasks
+tarefas
 colocar uma opção de emitir nota fiscal
 colocar para montar contrato
+
+ajustar layout
+receitas
+inventario
+Ordens de compra
+Fornecedores
+Equipe
+Horas Trabalhadas
+Tarefas Ativas
+Agenda
+Relatórios de Projetos
+Relatórios Financeiros
+Relatórios de Ações
+Preferências do Sistema
+Permissões do Usuário
