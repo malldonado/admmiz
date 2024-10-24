@@ -5,42 +5,30 @@ import NextLink from "next/link";
 
 interface User {
   id: string;
-  title: string;
-  description: string;
-  status: "Em andamento" | "Terminado" | "Parado";
-  start: Date;
-  days: number;
-  revenue: number;
-  value: number;
+  itemDescription: string;
+  quantity: number;
+  measure: string;
+  location: string;
+  acquisitionDate: Date;
+  status: "Em uso" | "Disponível" | "Manutenção";
 }
 
 const users: User[] = [
   {
     id: "1",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Em andamento",
-    start: new Date("2021-04-01"),
-    days: 23,
-    revenue: 23000.50,
-    value: 42450.55
-  },
-  {
-    id: "2",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Parado",
-    start: new Date("2023-08-15"),
-    days: 28,
-    revenue: 23000.50,
-    value: 45000,
-  },
+    itemDescription: "Concreto",
+    quantity: 12,
+    measure: "m³",
+    location: 'Almoxarifado',
+    acquisitionDate: new Date("2021-04-01"),
+    status: 'Disponível',
+  }
 ];
 
 const TableHeader: FC = () => (
   <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
-      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
+      {["Descrição do Item", "Quantidade", "Unidade de Medida", "Localização", "Data de Aquisição", "Status", "Ação"].map(
         (header) => (
           <th
             key={header}
@@ -56,38 +44,24 @@ const TableHeader: FC = () => (
 );
 
 const TableRow: FC<User> = ({
-  title,
-  description,
-  status,
-  start,
-  days,
-  revenue,
-  value,
+  itemDescription,
+  quantity,
+  measure,
+  location,
+  acquisitionDate,
+  status
 }) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{title}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{itemDescription}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {description}
+      {quantity}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      <div
-        className={` ${
-          status === "Em andamento"
-            ? "text-green-700 font-bold"
-            : status === "Terminado"
-            ? "text-red-700 font-bold"
-            : "text-blue-700 font-bold"
-        }`}
-      >
-        {status}
-      </div>
+      {measure}
     </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {start.toDateString()}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{location}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{acquisitionDate.toDateString()}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{status}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
       <NextLink href='/pages/project/edit'>
         <FiEdit

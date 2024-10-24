@@ -5,36 +5,26 @@ import NextLink from "next/link";
 
 interface User {
   id: string;
-  title: string;
-  description: string;
-  status: "Em andamento" | "Terminado" | "Parado";
-  start: Date;
-  days: number;
-  revenue: number;
-  value: number;
+  supplier: string;
+  itemDescription: string;
+  quantity: number;
+  orderDate: Date;
+  deliveryDate: Date;
+  status: "Aguardando" | "Entregue" | "Cancelada" | "Em Andamento";
+  total: number;
 }
 
 const users: User[] = [
   {
     id: "1",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Em andamento",
-    start: new Date("2021-04-01"),
-    days: 23,
-    revenue: 23000.50,
-    value: 42450.55
-  },
-  {
-    id: "2",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Parado",
-    start: new Date("2023-08-15"),
-    days: 28,
-    revenue: 23000.50,
-    value: 45000,
-  },
+    supplier: "Fornecedor A	",
+    itemDescription: "Concreto",
+    quantity: 120,
+    orderDate: new Date("2021-04-01"),
+    deliveryDate: new Date("2021-04-01"),
+    status: "Entregue",
+    total: 42450.55
+  }
 ];
 
 const TableHeader: FC = () => (
@@ -56,25 +46,31 @@ const TableHeader: FC = () => (
 );
 
 const TableRow: FC<User> = ({
-  title,
-  description,
+  supplier,
+  itemDescription,
+  quantity,
+  orderDate,
+  deliveryDate,
   status,
-  start,
-  days,
-  revenue,
-  value,
+  total,
 }) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{title}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{supplier}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {description}
+      {itemDescription}
     </td>
+
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
+      {quantity}
+    </td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{orderDate.toDateString()}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{deliveryDate.toDateString()}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       <div
         className={` ${
-          status === "Em andamento"
+          status === "Entregue"
             ? "text-green-700 font-bold"
-            : status === "Terminado"
+            : status === "Cancelada"
             ? "text-red-700 font-bold"
             : "text-blue-700 font-bold"
         }`}
@@ -82,12 +78,7 @@ const TableRow: FC<User> = ({
         {status}
       </div>
     </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {start.toDateString()}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{total}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
       <NextLink href='/pages/project/edit'>
         <FiEdit

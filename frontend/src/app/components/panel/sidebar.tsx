@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { SlPeople } from "react-icons/sl";
-import { MdOutlineInventory2, MdTaskAlt, MdOutlineAttachMoney } from "react-icons/md";
-import { IoDocumentTextOutline } from "react-icons/io5";
-import { FiSettings } from "react-icons/fi";
+import { MdTaskAlt, MdOutlineAttachMoney } from "react-icons/md";
+import { FiSettings, FiUser } from "react-icons/fi";
 import { RxDashboard } from "react-icons/rx";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { HiOutlineArchiveBox } from "react-icons/hi2";
@@ -33,6 +32,13 @@ const NavbarItems: NavbarItem[] = [
   },
   {
     icon: (
+      <FiUser className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+    ),
+    text: "Clientes",
+    link: "/pages/client",
+  },
+  {
+    icon: (
       <PiProjectorScreenChart className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
     text: "Projetos",
@@ -55,6 +61,7 @@ const NavbarItems: NavbarItem[] = [
       { text: "Orçamentos Pendentes", link: "/pages/budgets/pending" },
     ],
   },
+
   {
     icon: (
       <MdOutlineAttachMoney className="w-6 h-6 text-white transition duration-75 dark:text-white" />

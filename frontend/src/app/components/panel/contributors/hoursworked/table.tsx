@@ -5,42 +5,28 @@ import NextLink from "next/link";
 
 interface User {
   id: string;
-  title: string;
-  description: string;
-  status: "Em andamento" | "Terminado" | "Parado";
-  start: Date;
-  days: number;
-  revenue: number;
-  value: number;
+  name: string;
+  date: Date;
+  hoursworked: number;
+  project: string;
+  position: string;
 }
 
 const users: User[] = [
   {
     id: "1",
-    title: "01/10/2024",
-    description: "João da Silva",
-    status: "Em andamento",
-    start: new Date("2021-04-01"),
-    days: 23,
-    revenue: 23000.50,
-    value: 42450.55
-  },
-  {
-    id: "2",
-    title: "01/10/2024",
-    description: "João da Silva",
-    status: "Em andamento",
-    start: new Date("2021-04-01"),
-    days: 23,
-    revenue: 23000.50,
-    value: 42450.55
-  },
+    name: "01/10/2024",
+    date: new Date("2021-04-01"),
+    hoursworked: 8,
+    project: "Projeto A",
+    position: "Arquiteta"
+  }
 ];
 
 const TableHeader: FC = () => (
   <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
-      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
+      {["Nome", "Data", "Horas Trabalhadas", "Projeto", "Cargo", "Ação"].map(
         (header) => (
           <th
             key={header}
@@ -56,38 +42,22 @@ const TableHeader: FC = () => (
 );
 
 const TableRow: FC<User> = ({
-  title,
-  description,
-  status,
-  start,
-  days,
-  revenue,
-  value,
+  name,
+  date,
+  hoursworked,
+  project,
+  position
 }) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{title}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{name}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {description}
+      {date.toDateString()}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      <div
-        className={` ${
-          status === "Em andamento"
-            ? "text-green-700 font-bold"
-            : status === "Terminado"
-            ? "text-red-700 font-bold"
-            : "text-blue-700 font-bold"
-        }`}
-      >
-        {status}
-      </div>
+      {hoursworked}
     </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {start.toDateString()}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{project}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{position}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
       <NextLink href='/pages/project/edit'>
         <FiEdit
