@@ -16,6 +16,8 @@ const Navbar: React.FC = () => {
     switch (pathname) {
       case "/pages/dashboard":
         return "Início";
+      case "/pages/clients":
+      return "Clientes";
       case "/pages/project/all":
         return "Todos Projetos";
       case '/pages/project/new':

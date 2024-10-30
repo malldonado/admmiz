@@ -35,7 +35,7 @@ const NavbarItems: NavbarItem[] = [
       <FiUser className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
     text: "Clientes",
-    link: "/pages/client",
+    link: "/pages/clients",
   },
   {
     icon: (
@@ -61,7 +61,6 @@ const NavbarItems: NavbarItem[] = [
       { text: "Orçamentos Pendentes", link: "/pages/budgets/pending" },
     ],
   },
-
   {
     icon: (
       <MdOutlineAttachMoney className="w-6 h-6 text-white transition duration-75 dark:text-white" />
@@ -107,7 +106,7 @@ const NavbarItems: NavbarItem[] = [
     subcategories: [
       { text: "Tarefas Ativas", link: "/pages/tasks/active" },
       // { text: "Nova Tarefa", link: "/pages/tasks/new" },
-      { text: "Agenda", link: "/pages/tasks/agenda" },
+      // { text: "Agenda", link: "/pages/tasks/agenda" },
     ],
   },
   // {

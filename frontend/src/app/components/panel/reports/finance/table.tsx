@@ -5,42 +5,30 @@ import { HiOutlineDocumentReport } from "react-icons/hi";
 
 interface User {
   id: string;
-  title: string;
-  description: string;
-  status: "Em andamento" | "Terminado" | "Parado";
-  start: Date;
-  days: number;
-  revenue: number;
-  value: number;
+  project: string;
+  revenue: string;
+  expenditure: string;
+  profit: string;
+  reportDate: Date;
+  status: "Pago" | "Em aberto";
 }
 
 const users: User[] = [
   {
     id: "1",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Em andamento",
-    start: new Date("2021-04-01"),
-    days: 23,
-    revenue: 23000.50,
-    value: 42450.55
-  },
-  {
-    id: "2",
-    title: "Casa Alphaville",
-    description: "Projeto residencial envolvendo a construção de uma casa moderna...",
-    status: "Parado",
-    start: new Date("2023-08-15"),
-    days: 28,
-    revenue: 23000.50,
-    value: 45000,
-  },
+    project: "Construção de Edifício",
+    revenue: "R$ 2.000.000",
+    expenditure: "R$ 1.500.000",
+    profit: "R$ 500.000",
+    reportDate: new Date("2021-04-01"),
+    status: "Pago",
+  }
 ];
 
 const TableHeader: FC = () => (
   <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
-      {["Título", "Descrição", "Status", "Início", "Dias", "Receita (R$)", "Total (R$)", "Ação"].map(
+      {["Projeto", "Receita", "Despesa", "Lucro", "Data do Relatório", "Status de Pagamento", "Ação"].map(
         (header) => (
           <th
             key={header}
@@ -56,40 +44,38 @@ const TableHeader: FC = () => (
 );
 
 const TableRow: FC<User> = ({
-  title,
-  description,
-  status,
-  start,
-  days,
+  project,
   revenue,
-  value,
+  expenditure,
+  profit,
+  reportDate,
+  status
 }) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{title}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{project}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {description}
+      {revenue}
     </td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
+      {expenditure}
+    </td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{profit}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{reportDate.toDateString()}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       <div
         className={` ${
-          status === "Em andamento"
+          status === "Pago"
             ? "text-green-700 font-bold"
-            : status === "Terminado"
-            ? "text-red-700 font-bold"
             : "text-blue-700 font-bold"
         }`}
       >
         {status}
       </div>
     </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {start.toDateString()}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{days}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{revenue}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
-      <HiOutlineDocumentReport className="cursor-pointer text-xl" />
+      <HiOutlineDocumentReport className="cursor-pointer text-xl mr-2" />
+      <FiEdit className="cursor-pointer text-xl mr-2" />
+      <RiDeleteBin7Line className="cursor-pointer text-xl" />
     </td>
   </tr>
 );
