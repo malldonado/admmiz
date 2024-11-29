@@ -1,13 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import { SlPeople } from "react-icons/sl";
-import { MdTaskAlt, MdOutlineAttachMoney } from "react-icons/md";
-import { FiSettings, FiUser } from "react-icons/fi";
 import { RxDashboard } from "react-icons/rx";
-import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
-import { HiOutlineArchiveBox } from "react-icons/hi2";
-import { HiOutlineDocumentReport } from "react-icons/hi";
-import { PiProjectorScreenChart } from "react-icons/pi";
+import {
+  TfiAgenda,
+  TfiPackage,
+  TfiRulerPencil,
+  TfiReceipt,
+  TfiClipboard,
+  TfiWrite,
+  TfiComments,
+  TfiFiles,
+  TfiSettings,
+} from "react-icons/tfi";
+import { SlChart, SlPieChart, SlWallet, SlNotebook } from "react-icons/sl";
 import NextLink from "next/link";
 
 interface Subcategory {
@@ -32,116 +38,240 @@ const NavbarItems: NavbarItem[] = [
   },
   {
     icon: (
-      <FiUser className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+      <SlPeople className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Clientes",
-    link: "/pages/clients",
-  },
-  {
-    icon: (
-      <PiProjectorScreenChart className="w-6 h-6 text-white transition duration-75 dark:text-white" />
-    ),
-    text: "Projetos",
+    text: "Cadastros",
     link: "",
     subcategories: [
-      { text: "Todos Projetos", link: "/pages/project/all" },
-      // { text: "Novo Projeto", link: "/pages/project/new" },
-      // { text: "Relatórios de Projetos", link: "/pages/project/reports" },
+      { text: "Clientes", link: "/pages/customers/clients" },
+      { text: "Fornecedores", link: "/pages/customers/employees" },
+      { text: "Funcionários", link: "/pages/customers/suppliers" },
+      { text: "Transportadoras", link: "/pages/customers/carriers" },
+      { text: "Tipos de contatos", link: "/pages/customers/type-contacts" },
+      { text: "Tipos de endereços", link: "/pages/customers/type-adress" },
+      { text: "Campos extras", link: "/pages/customers/extra-fields" },
     ],
   },
   {
     icon: (
-      <LiaFileInvoiceDollarSolid className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+      <TfiClipboard className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+    ),
+    text: "Produtos",
+    link: "",
+    subcategories: [
+      { text: "Gerenciar produtos", link: "" },
+      { text: "Valores de venda", link: "" },
+      { text: "Etiquetas", link: "" },
+      { text: "Grupos de produtos", link: "" },
+      { text: "Unidades de produtos", link: "" },
+      { text: "Grades/ Variações", link: "" },
+      { text: "Campos extras", link: "" },
+    ],
+  },
+  {
+    icon: (
+      <TfiRulerPencil className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+    ),
+    text: "Serviços",
+    link: "",
+    subcategories: [
+      { text: "Gerenciar serviços", link: "" },
+    ],
+  },
+  {
+    icon: (
+      <SlChart className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
     text: "Orçamentos",
     link: "",
     subcategories: [
-      // { text: "Novo Orçamento", link: "/pages/budgets/new" },
-      { text: "Gerenciar Orçamentos", link: "/pages/budgets/manage" },
-      { text: "Orçamentos Pendentes", link: "/pages/budgets/pending" },
+      { text: "Produtos", link: "" },
+      { text: "Serviços", link: "" },
+      { text: "Situações", link: "" },
+      { text: "Campos extras", link: "" },
+      { text: "Modelo de e-mail", link: "" },
+      { text: "Configurações", link: "" },
     ],
   },
   {
     icon: (
-      <MdOutlineAttachMoney className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+      <TfiWrite className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Finanças",
+    text: "Ordens de Serviços",
     link: "",
     subcategories: [
-      { text: "Despesas", link: "/pages/finance/expenses" },
-      { text: "Receitas", link: "/pages/finance/revenues" },
-      // { text: "Relatórios Financeiros", link: "/pages/finance/reports" },
+      { text: "Gerenciar O.S.", link: "" },
+      { text: "Painel", link: "" },
+      { text: "Situações", link: "" },
+      { text: "Campos extras", link: "" },
+      { text: "Modelo de e-mail", link: "" },
+      { text: "Configurações", link: "" },
     ],
   },
   {
     icon: (
-      <HiOutlineArchiveBox className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+      <SlPieChart className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Materiais e Estoque",
+    text: "Vendas",
     link: "",
     subcategories: [
-      { text: "Inventário", link: "/pages/stock/inventory" },
-      { text: "Ordens de Compra", link: "/pages/stock/purchase" },
-      { text: "Fornecedores", link: "/pages/stock/suppliers" },
+      { text: "Produtos", link: "" },
+      { text: "Balcão", link: "" },
+      { text: "Serviços", link: "" },
+      { text: "Situações", link: "" },
+      { text: "Canais", link: "" },
+      { text: "Campos extras", link: "" },
+      { text: "Modelo de e-mail", link: "" },
+      { text: "Balanças", link: "" },
+      { text: "Configurações", link: "" },
     ],
   },
   {
     icon: (
-      <SlPeople className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+      <TfiPackage className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Contribuidores",
+    text: "Estoque",
     link: "",
     subcategories: [
-      { text: "Equipe", link: "/pages/contributors/team" },
-      { text: "Horas Trabalhadas", link: "/pages/contributors/hoursworked" },
-      // { text: "Responsabilidades", link: "/pages/contributors/responsibilities" },
+      { text: "Movimentações", link: "" },
+      { text: "Ajustes", link: "" },
+      { text: "Transferências", link: "" },
+      { text: "Cotações", link: "" },
+      { text: "Compras", link: "" },
+      { text: "Trocas e devoluções", link: "" },
+      { text: "Situações de compras", link: "" },
+      { text: "Campos extras", link: "" },
+      { text: "Modelo de e-mail", link: "" },
+      { text: "Configurações", link: "" },
     ],
   },
   {
     icon: (
-      <MdTaskAlt className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+      <SlWallet className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
-    text: "Tarefas",
+    text: "Financeiro",
     link: "",
     subcategories: [
-      { text: "Tarefas Ativas", link: "/pages/tasks/active" },
-      // { text: "Nova Tarefa", link: "/pages/tasks/new" },
-      // { text: "Agenda", link: "/pages/tasks/agenda" },
+      { text: "Contas a pagar", link: "" },
+      { text: "Contas a receber", link: "" },
+      { text: "DRE gerencial", link: "" },
+      { text: "Fluxo de caixa", link: "" },
+      { text: "Boletos bancários", link: "" },
+      { text: "Caixas", link: "" },
+      { text: "Contas bancárias", link: "" },
+      { text: "Formas de pagamento", link: "" },
+      { text: "Plano de contas", link: "" },
+      { text: "Situações", link: "" },
+      { text: "Centros de custos", link: "" },
+      { text: "Cociliação bancária", link: "" },
+      { text: "Transferências", link: "" },
+      { text: "Campos extras", link: "" },
+      { text: "Modelos de e-mails", link: "" },
+      { text: "Modelos de e-mails", link: "" },
+      { text: "Tabelas de rateios", link: "" },
+      { text: "Configurações", link: "" },
+    ],
+  },
+  {
+    icon: (
+      <TfiReceipt className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+    ),
+    text: "Notas Fiscais",
+    link: "",
+    subcategories: [
+      { text: "Gerenciar NF-e", link: "" },
+      { text: "Gerenciar NFS-e", link: "" },
+      { text: "Gerenciar NFC-e", link: "" },
+      { text: "Importar XML", link: "" },
+      { text: "Certificado Digital", link: "" },
+      { text: "Naturezas de operações", link: "" },
+      { text: "Tributações", link: "" },
+      { text: "Atividades de serviços", link: "" },
+      { text: "Modelos de e-mails", link: "" },
+      { text: "Intermediadores", link: "" },
+      { text: "Configurações", link: "" },
+
+
+    ],
+  },
+  {
+    icon: (
+      <SlNotebook className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+    ),
+    text: "Contratos",
+    link: "",
+    subcategories: [
+      { text: "Serviços", link: "" },
+      { text: "Locações", link: "" },
+      { text: "Assinaturas", link: "" },
+      { text: "Situações de contratos", link: "" },
+      { text: "Situações de locações", link: "" },
+      { text: "Campos extra", link: "" },
+      { text: "Configurações", link: "" },
+    ],
+  },
+  {
+    icon: (
+      <TfiComments className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+    ),
+    text: "Atendimentos",
+    link: "",
+    subcategories: [
+      { text: "Atendimentos", link: "" },
+      { text: "Formas", link: "" },
+      { text: "Assuntos", link: "" },
+      { text: "Situações", link: "" },
+      { text: "Campos extras", link: "" },
+      { text: "Configurações", link: "" },
     ],
   },
   // {
   //   icon: (
-  //     <IoDocumentTextOutline className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+  //     <TfiAgenda className="w-6 h-6 text-white transition duration-75 dark:text-white" />
   //   ),
-  //   text: "Documentos",
+  //   text: "Agenda",
   //   link: "",
   //   subcategories: [
-  //     { text: "Arquivos", link: "/pages/documents/files" },
-  //     { text: "Documentos Recentes", link: "/pages/documents/recent" },
-  //     { text: "Licenças", link: "/pages/documents/license" },
+  //     { text: "Preferências do Sistema", link: "/pages/settings/system" },
+  //     { text: "Permissões do Usuário", link: "/pages/settings/permissions" },
   //   ],
   // },
   {
     icon: (
-      <HiOutlineDocumentReport className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+      <TfiFiles className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
     text: "Relatórios",
     link: "",
     subcategories: [
-      { text: "Relatórios de Projetos", link: "/pages/reports/project" },
-      { text: "Relatórios Financeiros", link: "/pages/reports/finance" },
-      { text: "Relatórios de Ações", link: "/pages/reports/stock" },
+      { text: "Cadastros", link: "" },
+      { text: "Vendas", link: "" },
+      { text: "Ordens de serviços", link: "" },
+      { text: "Estoque", link: "" },
+      { text: "Financeiro", link: "" },
+      { text: "Contratos", link: "" },
+      { text: "Notas fiscais", link: "" },
+      { text: "Atendimentos", link: "" },
+      { text: "Agendamentos", link: "" },
+      { text: "Logs do sistema", link: "" }
     ],
   },
   {
     icon: (
-      <FiSettings className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+      <TfiSettings className="w-6 h-6 text-white transition duration-75 dark:text-white" />
     ),
     text: "Configurações",
     link: "",
     subcategories: [
-      { text: "Preferências do Sistema", link: "/pages/settings/system" },
-      { text: "Permissões do Usuário", link: "/pages/settings/permissions" },
+      { text: "Gerais", link: "" },
+      { text: "Meu plano", link: "" },
+
+      { text: "Usuários", link: "" },
+      { text: "Dados da empresa", link: "" },
+      { text: "Marca da empresa", link: "" },
+      { text: "Empresas / Lojas", link: "" },
+      { text: "Certificado digital", link: "" },
+      { text: "Modelos de e-mails", link: "" },
+      { text: "Avisos por e-mail", link: "" },
     ],
   },
 ];
@@ -163,7 +293,7 @@ const Sidebar: React.FC = () => {
   return (
     <div className="font-main h-full">
       <div
-        className={`lg:w-[260px] h-screen mx-auto ${
+        className={`lg:w-[260px] h-full mx-auto ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 transform transition-transform duration-300 ease-in-out`}
       >

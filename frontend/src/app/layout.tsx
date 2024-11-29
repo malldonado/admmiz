@@ -6,8 +6,8 @@ import "./globals.css";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Admmiz Engenharia & Arquitetura",
-  description: "Stock Manager",
+  title: "Admmiz",
+  description: "",
   icons: {
     icon: "./favicon.ico",
   },
