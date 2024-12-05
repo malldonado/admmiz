@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -16,62 +16,184 @@ const Navbar: React.FC = () => {
     switch (pathname) {
       case "/pages/dashboard":
         return "Início";
-      case "/pages/clients":
-      return "Clientes";
-      case "/pages/project/all":
-        return "Todos Projetos";
-      case '/pages/project/new':
-        return "Novo Projeto";
-      case '/pages/project/edit':
-        return "Editar Projeto";
-      case '/pages/project/reports':
-        return "Relatórios de Projetos";
-      case '/pages/budgets/manage':
-        return "Gerenciar Orçamentos";
-      case '/pages/budgets/pending':
-        return "Orçamentos Pendentes";
-      case '/pages/budgets/new':
-        return "Novo Orçamento";
-      case '/pages/finance/expenses':
-        return "Despesas";
-      case '/pages/finance/revenues':
-        return "Receitas";
-      case '/pages/finance/reports':
-        return "Relatórios Financeiros";
-      case '/pages/stock/inventory':
-        return "Inventário";
-      case '/pages/stock/purchase':
-        return "Ordens de compra";
-      case '/pages/stock/suppliers':
+      case "/pages/customers/clients":
+        return "Clientes";
+      case "/pages/customers/clients/new":
+        return "Novo Cliente";
+      case "/pages/customers/employees":
         return "Fornecedores";
-      case '/pages/contributors/team':
-        return "Equipe";
-      case '/pages/contributors/hoursworked':
-        return "Horas Trabalhadas";
-      case '/pages/contributors/responsibilities':
-        return "Responsabilidades";
-      case '/pages/tasks/active':
-        return "Tarefas Ativas";
-      case '/pages/tasks/new':
-        return "Nova Tarefa";
-      case '/pages/tasks/agenda':
-        return "Agenda";
-      case '/pages/documents/files':
-        return "Arquivos";
-      case '/pages/documents/recent':
-        return "Documentos Recentes";
-      case '/pages/documents/license':
-        return "Gerenciamento de Licenças";
-      case '/pages/reports/project':
-        return "Relatórios de Projetos";
-      case '/pages/reports/finance':
-        return "Relatórios Financeiros";
-      case '/pages/reports/stock':
-        return "Relatórios de Ações";
-      case '/pages/settings/system':
-        return "Preferências do Sistema";
-      case '/pages/settings/permissions':
-        return "Permissões do Usuário";
+      case "/pages/customers/suppliers":
+        return "Funcionários";
+      case "/pages/customers/carriers":
+        return "Transportadoras";
+      case "/pages/customers/type-contacts":
+        return "Tipos de Contatos";
+      case "/pages/customers/type-address":
+        return "Tipos de Endereços";
+      case "/pages/customers/extra-fields":
+        return "Campos Extras";
+      case "/pages/products/product-management":
+        return "Gerenciar Produtos";
+      case "/pages/products/sales-values":
+        return "Valores de Venda";
+      case "/pages/products/labels":
+        return "Etiquetas";
+      case "/pages/products/product-groups":
+        return "Grupos de Produtos";
+      case "/pages/products/product-units":
+        return "Unidades de Produtos";
+      case "/pages/products/variations":
+        return "Grades / Variações";
+      case "/pages/products/extra-fields":
+        return "Campos Extras";
+      case "/pages/services/service-management":
+        return "Gerenciar Serviços";
+      case "/pages/budgets/products":
+        return "Produtos";
+      case "/pages/budgets/services":
+        return "Serviços";
+      case "/pages/budgets/situations":
+        return "Situações";
+      case "/pages/budgets/extra-fields":
+        return "Campos Extras";
+      case "/pages/budgets/email-template":
+        return "Modelo de e-mail";
+      case "/pages/budgets/settings":
+        return "Configurações";
+      case "/pages/service-orders/manage-os":
+        return "Gerenciar O.S";
+      case "/pages/service-orders/panel":
+        return "Painel";
+      case "/pages/service-orders/situations":
+        return "Situações";
+      case "/pages/service-orders/extra-fields":
+        return "Campos Extras";
+      case "/pages/service-orders/email-template":
+        return "Modelo de e-mail";
+      case "/pages/service-orders/settings":
+        return "Configurações";
+      case "/pages/sales/products":
+        return "Produtos";
+      case "/pages/sales/counter":
+        return "Balcão";
+      case "/pages/sales/services":
+        return "Serviços";
+      case "/pages/sales/situations":
+        return "Situações";
+      case "/pages/sales/channels":
+        return "Canais";
+      case "/pages/sales/extra-fields":
+        return "Campos Extras";
+      case "/pages/sales/email-template":
+        return "Modelo de e-mail";
+      case "/pages/sales/scales":
+        return "Balanças";
+      case "/pages/sales/settings":
+        return "Configurações";
+      case "/pages/stock/movement":
+        return "Movimentações";
+      case "/pages/stock/adjustments":
+        return "Ajustes";
+      case "/pages/stock/transfers":
+        return "Transferências";
+      case "/pages/stock/quotes":
+        return "Cotações";
+      case "/pages/stock/shopping":
+        return "Compras";
+      case "/pages/stock/exchange-return":
+        return "Trocas e Devoluções";
+      case "/pages/stock/purchasing-situations":
+        return "Situações de Compras";
+      case "/pages/stock/extra-fields":
+        return "Campos Extras";
+      case "/pages/stock/email-template":
+        return "Modelo de e-mail";
+      case "/pages/stock/settings":
+        return "Configurações";
+      case "/pages/financial/accounts-payable":
+        return "Contas a Pagar";
+      case "/pages/financial/accounts-receivable":
+        return "Contas a Receber";
+      case "/pages/financial/managerial-dre":
+        return "DRE Gerencial";
+      case "/pages/financial/cash-flow":
+        return "Fluxo de Caixa";
+      case "/pages/financial/bank-slips":
+        return "Boletos Bancários";
+      case "/pages/financial/checkouts":
+        return "Caixas";
+      case "/pages/financial/bank-accounts":
+        return "Contas Bancárias";
+      case "/pages/financial/payment-methods":
+        return "Formas de Pagamento";
+      case "/pages/financial/chart-accounts":
+        return "Plano de Contas";
+      case "/pages/financial/situations":
+        return "Situações";
+      case "/pages/financial/cost-centers":
+        return "Centros de Custos";
+      case "/pages/financial/bank-reconciliation":
+        return "Cociliação Bancária";
+      case "/pages/financial/transfers":
+        return "Transferências";
+      case "/pages/financial/extra-fields":
+        return "Campos Extras";
+      case "/pages/financial/email-templates":
+        return "Modelos de e-mails";
+      case "/pages/financial/allocation-tables":
+        return "Tabelas de Rateios";
+      case "/pages/financial/settings":
+        return "Configurações";
+
+      case "/pages/invoices/manage-nf-e":
+        return "Gerenciar NF-e";
+      case "/pages/invoices/manage-nfs-e":
+        return "Gerenciar NFS-e";
+      case "/pages/invoices/manage-nfc-e":
+        return "Gerenciar NFC-e";
+      case "/pages/invoices/import-xml":
+        return "Importar XML";
+      case "/pages/invoices/digital-certificate":
+        return "Certificado Digital";
+      case "/pages/invoices/nature-operations":
+        return "Naturezas de Operações";
+      case "/pages/invoices/taxation":
+        return "Tributações";
+      case "/pages/invoices/service-activities":
+        return "Atividades de Serviços";
+      case "/pages/invoices/email-templates":
+        return "Modelos de e-mails";
+      case "/pages/invoices/intermediaries":
+        return "Intermediadores";
+      case "/pages/invoices/settings":
+        return "Configurações";
+
+      case "/pages/contracts/services":
+        return "Serviços";
+      case "/pages/contracts/locations":
+        return "Locações";
+      case "/pages/contracts/signatures":
+        return "Assinaturas";
+      case "/pages/contracts/contract-situations":
+        return "Situações de Contratos";
+      case "/pages/contracts/rental-situations":
+        return "Situações de Locações";
+      case "/pages/contracts/extra-fields":
+        return "Campos Extra";
+      case "/pages/contracts/settings":
+        return "Configurações";
+      case "/pages/meet/services":
+        return "Atendimentos";
+      case "/pages/meet/shapes":
+        return "Formas";
+      case "/pages/meet/matters":
+        return "Assuntos";
+      case "/pages/meet/situations":
+        return "Situações";
+      case "/pages/meet/extra-fields":
+        return "Campos Extras";
+      case "/pages/meet/settings":
+        return "Configurações";
       default:
         return "";
     }

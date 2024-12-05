@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import Sidebar from "@/app/components/panel/sidebar";
-import Sales from "@/components/panel/dashboard/sales";
-import Table from "@/components/panel/dashboard/table";
+import Sales from "@/components/old-panel/dashboard/sales";
+import Table from "@/components/old-panel/dashboard/table";
 import Navbar from "@/components/panel/navbar";
-import { Chart2 } from "@/components/panel/dashboard/chart2";
-import { Chart3 } from "@/components/panel/dashboard/chart3";
-import Tasks from "@/components/panel/dashboard/tasks";
+import { Chart2 } from "@/components/old-panel/dashboard/chart2";
+import { Chart3 } from "@/components/old-panel/dashboard/chart3";
+import Tasks from "@/components/old-panel/dashboard/tasks";
 
 const DashboardPage: React.FC = () => {
   return (
