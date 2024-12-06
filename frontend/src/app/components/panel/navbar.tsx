@@ -22,6 +22,8 @@ const Navbar: React.FC = () => {
         return "Novo Cliente";
       case "/pages/customers/employees":
         return "Fornecedores";
+      case "/pages/customers/employees/new":
+        return "Novo Fornecedor"
       case "/pages/customers/suppliers":
         return "Funcionários";
       case "/pages/customers/carriers":

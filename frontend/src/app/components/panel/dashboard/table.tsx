@@ -99,7 +99,7 @@ const Table: FC = () => {
       <div className="flex flex-col">
         <div className="overflow-x-auto">
           <div className="inline-block w-full py-2 align-middle">
-            <div className="overflow-hidden border border-gray-300 md:rounded-xl">
+            <div className="overflow-hidden border border-gray-300">
               <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-300">
                 <TableHeader />
                 <tbody className="bg-white divide-y divide-gray-300 dark:bg-transparent dark:divide-gray-300">
