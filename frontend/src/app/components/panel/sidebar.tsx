@@ -48,8 +48,8 @@ const NavbarItems: NavbarItem[] = [
       { text: "Funcionários", link: "/pages/customers/suppliers" },
       { text: "Transportadoras", link: "/pages/customers/carriers" },
       { text: "Tipos de contatos", link: "/pages/customers/type-contacts" },
-      { text: "Tipos de endereços", link: "/pages/customers/type-address" },
-      { text: "Campos extras", link: "/pages/customers/extra-fields" },
+      // { text: "Tipos de endereços", link: "/pages/customers/type-address" },
+      // { text: "Campos extras", link: "/pages/customers/extra-fields" },
     ],
   },
   {

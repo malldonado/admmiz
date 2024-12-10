@@ -20,14 +20,26 @@ const Navbar: React.FC = () => {
         return "Clientes";
       case "/pages/customers/clients/new":
         return "Novo Cliente";
+      case "/pages/customers/clients/edit":
+        return "Editando Cliente";
       case "/pages/customers/employees":
         return "Fornecedores";
       case "/pages/customers/employees/new":
-        return "Novo Fornecedor"
+        return "Novo Fornecedor";
+      case "/pages/customers/employees/edit":
+        return "Editando Fornecedor";
       case "/pages/customers/suppliers":
         return "Funcionários";
+      case "/pages/customers/suppliers/new":
+        return "Novo Funcionário";
+      case "/pages/customers/suppliers/edit":
+        return "Editando Funcionário";
       case "/pages/customers/carriers":
         return "Transportadoras";
+      case "/pages/customers/carriers/new":
+        return "Nova Transportadora";
+      case "/pages/customers/carriers/edit":
+        return "Editando Transportadora";
       case "/pages/customers/type-contacts":
         return "Tipos de Contatos";
       case "/pages/customers/type-address":
@@ -38,8 +50,12 @@ const Navbar: React.FC = () => {
         return "Gerenciar Produtos";
       case "/pages/products/sales-values":
         return "Valores de Venda";
+      case "/pages/products/sales-values/new":
+        return "Novos Valores de Venda";
       case "/pages/products/labels":
         return "Etiquetas";
+      case "/pages/products/labels/new":
+        return "Nova Etiqueta";
       case "/pages/products/product-groups":
         return "Grupos de Produtos";
       case "/pages/products/product-units":
@@ -146,7 +162,6 @@ const Navbar: React.FC = () => {
         return "Tabelas de Rateios";
       case "/pages/financial/settings":
         return "Configurações";
-
       case "/pages/invoices/manage-nf-e":
         return "Gerenciar NF-e";
       case "/pages/invoices/manage-nfs-e":
@@ -169,7 +184,6 @@ const Navbar: React.FC = () => {
         return "Intermediadores";
       case "/pages/invoices/settings":
         return "Configurações";
-
       case "/pages/contracts/services":
         return "Serviços";
       case "/pages/contracts/locations":
@@ -205,6 +219,9 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="flex flex-wrap">
+      <div className="h-8 bg-[#005fff] w-full text-white flex justify-center items-center">
+          Sua versão de demonstração expira em 10 dias
+      </div>
       <div className="mb-2 mx-auto w-full bg-white h-20">
         <div className="sm:flex items-stretch justify-between grow lg:mb-0 py-5 px-4">
           <div className="flex flex-col flex-wrap justify-center mb-5 mr-3 lg:mb-0">

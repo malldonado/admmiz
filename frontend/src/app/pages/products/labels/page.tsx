@@ -2,6 +2,9 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
+import Table from '@/components/panel/products/labels/table';
+import Input from '@/components/panel/products/labels/input';
+import Button from '@/components/panel/products/labels/button';
 
 const Labels: React.FC = () => {
   return (
@@ -9,6 +12,11 @@ const Labels: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white">
         <Navbar/>
+        <div className='flex justify-start items-center'>
+          <Button/>
+          <Input/>
+        </div>
+        <Table/>
       </div>
     </div>
   );

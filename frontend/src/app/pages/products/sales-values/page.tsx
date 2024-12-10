@@ -2,6 +2,9 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
+import Button from '@/components/panel/products/sales-values/button';
+import Input from '@/components/panel/products/sales-values/input';
+import Table from '@/components/panel/products/sales-values/table';
 
 const ProductsSalesValues: React.FC = () => {
   return (
@@ -9,6 +12,11 @@ const ProductsSalesValues: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white">
         <Navbar/>
+        <div className='flex justify-start items-center'>
+          <Button/>
+          <Input/>
+        </div>
+        <Table/>
       </div>
     </div>
   );

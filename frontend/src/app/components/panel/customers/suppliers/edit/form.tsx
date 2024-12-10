@@ -38,7 +38,7 @@ const Form: React.FC = () => {
         <div className="-mx-3 md:flex mb-6">
           <div className="md:w-1/3 px-3 mb-6 md:mb-0">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Tipo de transportadora
+              Tipo de funcionário
             </label>
             <select
               className="block appearance-none w-full bg-gray-200 border border-gray-300 text-gray-700 py-1 px-4 pr-8  outline-none"

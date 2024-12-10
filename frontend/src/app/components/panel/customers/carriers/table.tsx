@@ -75,7 +75,7 @@ const TableRow: FC<User> = ({
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{situation}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{userDate}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
-      <NextLink href="/pages/customers/clients/edit">
+      <NextLink href="/pages/customers/carriers/edit">
         <FiEdit
           className="cursor-pointer text-lg mr-2
       "

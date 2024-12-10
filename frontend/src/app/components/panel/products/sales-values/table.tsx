@@ -1,48 +1,29 @@
 import { FC } from "react";
 import { FiEdit } from "react-icons/fi";
-import { RiDeleteBin7Line, RiEyeLine } from "react-icons/ri";
+import {
+  RiDeleteBin7Line,
+  RiEyeLine
+} from "react-icons/ri";
 import NextLink from "next/link";
 
 interface User {
   id: string;
-  name: string;
-  email: string;
-  phone: number;
-  situation: "Ativado" | "Desativado";
-  date: Date;
+  retail: string;
+  mean: number;
 }
 
 const users: User[] = [
   {
     id: "1",
-    name: "Matheus Maldonado",
-    email: "matheussilvacontat@gmail.com",
-    phone: 19989340806,
-    situation: "Ativado",
-    date: new Date(),
+    retail: "Varejo",
+    mean: 50
   },
 ];
-
-const userDate = users.map(user => {
-    const day = String(user.date.getUTCDate()).padStart(2, '0');
-    const month = String(user.date.getUTCMonth() + 1).padStart(2, '0');
-    const year = user.date.getUTCFullYear();
-    const formattedDate = `${day}/${month}/${year}`;
-
-    return formattedDate;
-});
 
 const TableHeader: FC = () => (
   <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
-      {[
-        "Nome",
-        "Email",
-        "Telefone",
-        "Situação",
-        "Cadastrado",
-        "Ação",
-      ].map((header) => (
+      {["Nome", "Média de lucro (%)", ""].map((header) => (
         <th
           key={header}
           scope="col"
@@ -55,27 +36,12 @@ const TableHeader: FC = () => (
   </thead>
 );
 
-const TableRow: FC<User> = ({
-  name,
-  email,
-  phone,
-  situation,
-  date
-}) => (
+const TableRow: FC<User> = ({ retail, mean }) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {name}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {email}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {phone}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{situation}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{userDate}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
-      <NextLink href="/pages/customers/suppliers/edit">
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{retail}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{mean}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-end items-center">
+      <NextLink href="/pages/customers/sales-values/edit">
         <FiEdit
           className="cursor-pointer text-lg mr-2
       "

@@ -20,7 +20,7 @@ const TableHeader: FC = () => (
     <tr>
       {[
         "Nome",
-        "Ação",
+        " "
       ].map((header) => (
         <th
           key={header}
@@ -37,7 +37,7 @@ const TableHeader: FC = () => (
 const TableRow: FC<User> = ({
   name,
 }) => (
-  <tr className="flex w-full">
+  <tr className="divide-y w-full">
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
       {name}
     </td>
@@ -48,10 +48,6 @@ const TableRow: FC<User> = ({
       "
         />
       </NextLink>
-      <RiEyeLine
-        className="cursor-pointer text-xl mr-2
-    "
-      />
       <RiDeleteBin7Line
         className="cursor-pointer text-xl
     "

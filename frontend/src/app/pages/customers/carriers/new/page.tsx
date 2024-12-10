@@ -2,7 +2,7 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
-import Form from '@/components/panel/customers/clients/new/form';
+import Form from '@/components/panel/customers/carriers/new/form';
 
 const CustomersCarriersNew: React.FC = () => {
   return (

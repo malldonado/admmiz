@@ -1,48 +1,35 @@
 import { FC } from "react";
 import { FiEdit } from "react-icons/fi";
-import { RiDeleteBin7Line, RiEyeLine } from "react-icons/ri";
+import {
+  RiDeleteBin7Line,
+  RiEyeLine,
+  RiArrowLeftRightFill,
+  RiMoneyDollarCircleLine,
+} from "react-icons/ri";
 import NextLink from "next/link";
 
 interface User {
   id: string;
+  code: number;
   name: string;
-  email: string;
-  phone: number;
-  situation: "Ativado" | "Desativado";
-  date: Date;
+  value: string;
+  stock: string;
 }
 
 const users: User[] = [
   {
     id: "1",
-    name: "Matheus Maldonado",
-    email: "matheussilvacontat@gmail.com",
-    phone: 19989340806,
-    situation: "Ativado",
-    date: new Date(),
+    code: 2008282393849,
+    name: "Mesa de centro",
+    value: "R$ 1200,00",
+    stock: "12",
   },
 ];
-
-const userDate = users.map(user => {
-    const day = String(user.date.getUTCDate()).padStart(2, '0');
-    const month = String(user.date.getUTCMonth() + 1).padStart(2, '0');
-    const year = user.date.getUTCFullYear();
-    const formattedDate = `${day}/${month}/${year}`;
-
-    return formattedDate;
-});
 
 const TableHeader: FC = () => (
   <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
-      {[
-        "Nome",
-        "Email",
-        "Telefone",
-        "Situação",
-        "Cadastrado",
-        "Ação",
-      ].map((header) => (
+      {["Código", "Nome", "Valor", "Estoque", "Ações"].map((header) => (
         <th
           key={header}
           scope="col"
@@ -55,27 +42,20 @@ const TableHeader: FC = () => (
   </thead>
 );
 
-const TableRow: FC<User> = ({
-  name,
-  email,
-  phone,
-  situation,
-  date
-}) => (
+const TableRow: FC<User> = ({ code, name, value, stock }) => (
   <tr>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {name}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {email}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">
-      {phone}
-    </td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{situation}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{userDate}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{code}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{name}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{stock}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
-      <NextLink href="/pages/customers/suppliers/edit">
+      <NextLink href="/pages/customers/clients/moviment">
+        <RiArrowLeftRightFill className="cursor-pointer text-xl mr-2" />
+      </NextLink>
+      <NextLink href="/pages/customers/clients/value">
+        <RiMoneyDollarCircleLine className="cursor-pointer text-xl mr-2" />
+      </NextLink>
+      <NextLink href="/pages/customers/clients/edit">
         <FiEdit
           className="cursor-pointer text-lg mr-2
       "

@@ -2,9 +2,9 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
-import Form from '@/components/panel/customers/employees/new/form';
+import Form from '@/components/panel/customers/suppliers/new/form';
 
-const CustomersEmployeesNew: React.FC = () => {
+const CustomersSuppliersNew: React.FC = () => {
   return (
     <div className="h-full m-0 p-0 overflow-hidden flex justify-center contain bg-[#192231]">
       <Sidebar />
@@ -16,4 +16,4 @@ const CustomersEmployeesNew: React.FC = () => {
   );
 }
 
-export default CustomersEmployeesNew;
+export default CustomersSuppliersNew;

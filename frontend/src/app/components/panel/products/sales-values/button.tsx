@@ -4,7 +4,7 @@ import { FiPlusCircle } from "react-icons/fi";
 
 const Button: React.FC = () => {
   return (
-    <NextLink href="/pages/customers/suppliers/new">
+    <NextLink href="/pages/products/sales-values/new">
         <button className="px-2 bg-[#315bd4] text-white font-bold w-[150px] h-[50px] ml-4 flex justify-start items-center">
             <FiPlusCircle className='mr-2 text-xl'/>
             <span>Adicionar</span>
