@@ -10,9 +10,9 @@ import Tasks from "@/components/panel/dashboard/tasks";
 
 const DashboardPage: React.FC = () => {
   return (
-    <div className="h-full m-0 p-0 overflow-hidden flex justify-center contain bg-[#192231]">
+    <div className="h-screen m-0 p-0 overflow-hidden flex justify-center contain bg-[#192231]">
       <Sidebar />
-      <div className="relative h-auto w-full bg-white">
+      <div className="relative h-auto w-full bg-white overflow-y-scroll">
         <Navbar />
         <Sales />
         <div className="flex justify-between">

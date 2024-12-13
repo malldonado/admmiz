@@ -41,7 +41,7 @@ const TableHeader: FC = () => (
         "Telefone",
         "Situação",
         "Cadastrado",
-        "Ação",
+        "",
       ].map((header) => (
         <th
           key={header}
@@ -74,7 +74,7 @@ const TableRow: FC<User> = ({
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{situation}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{userDate}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-end items-center">
       <NextLink href="/pages/customers/suppliers/edit">
         <FiEdit
           className="cursor-pointer text-lg mr-2

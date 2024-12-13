@@ -7,7 +7,7 @@ const Input: React.FC = () => {
       <input
         id="inputField"
         type="text"
-        placeholder="Pesquise algum fornecedor..."
+        placeholder="Pesquise ..."
         className="w-full p-3 border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
       />
     </div>

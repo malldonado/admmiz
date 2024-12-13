@@ -89,7 +89,7 @@ const NavbarItems: NavbarItem[] = [
       { text: "Serviços", link: "/pages/budgets/services" },
       { text: "Situações", link: "/pages/budgets/situations" },
       { text: "Campos extras", link: "/pages/budgets/extra-fields" },
-      { text: "Modelo de e-mail", link: "/pages/budgets/email-template" },
+      // { text: "Modelo de e-mail", link: "/pages/budgets/email-template" },
       { text: "Configurações", link: "/pages/budgets/settings" },
     ],
   },

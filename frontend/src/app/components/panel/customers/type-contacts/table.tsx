@@ -20,7 +20,7 @@ const TableHeader: FC = () => (
     <tr>
       {[
         "Nome",
-        " "
+        ""
       ].map((header) => (
         <th
           key={header}

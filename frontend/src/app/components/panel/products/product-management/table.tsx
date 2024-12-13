@@ -29,7 +29,7 @@ const users: User[] = [
 const TableHeader: FC = () => (
   <thead className="bg-gray-300 dark:bg-gray-200">
     <tr>
-      {["Código", "Nome", "Valor", "Estoque", "Ações"].map((header) => (
+      {["Código", "Nome", "Valor", "Estoque", ""].map((header) => (
         <th
           key={header}
           scope="col"
@@ -48,7 +48,7 @@ const TableRow: FC<User> = ({ code, name, value, stock }) => (
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{name}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{value}</td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap">{stock}</td>
-    <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-start items-center">
+    <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-end items-center">
       <NextLink href="/pages/customers/clients/moviment">
         <RiArrowLeftRightFill className="cursor-pointer text-xl mr-2" />
       </NextLink>
