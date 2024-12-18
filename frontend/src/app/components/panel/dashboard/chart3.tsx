@@ -75,7 +75,7 @@ export function Chart3() {
           </ChartContainer>
         </CardContent>
         <CardFooter className="flex-col items-start gap-2 text-base">
-          <div className="flex gap-2 font-medium leading-none">
+          <div className="flex gap-2 text-[16px] leading-none">
             +9,23% em relação ao período de 6 meses
           </div>
         </CardFooter>

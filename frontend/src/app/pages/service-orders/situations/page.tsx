@@ -2,6 +2,9 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
+import Button from '@/components/panel/service-orders/situations/button';
+import Input from '@/components/panel/service-orders/situations/input';
+import Table from '@/components/panel/service-orders/situations/table';
 
 const ServiceOrdersSituations: React.FC = () => {
   return (
@@ -9,6 +12,11 @@ const ServiceOrdersSituations: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white overflow-y-scroll">
         <Navbar/>
+        <div className='flex justify-start items-center'>
+          <Button/>
+          <Input/>
+        </div>
+        <Table/>
       </div>
     </div>
   );

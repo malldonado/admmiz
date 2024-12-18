@@ -2,6 +2,8 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
+import Button from '@/components/panel/service-orders/panel/button';
+import Input from '@/components/panel/service-orders/panel/input';
 
 const ServiceOrdersExtraFields: React.FC = () => {
   return (
@@ -9,6 +11,10 @@ const ServiceOrdersExtraFields: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white overflow-y-scroll">
         <Navbar/>
+        <div className='flex justify-start items-center'>
+          <Button/>
+          <Input/>
+        </div>
       </div>
     </div>
   );

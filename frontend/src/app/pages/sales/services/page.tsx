@@ -2,6 +2,8 @@
 import React from 'react';
 import Sidebar from '@/app/components/panel/sidebar';
 import Navbar from '@/components/panel/navbar';
+import Button from '@/components/panel/sales/services/button';
+import Table from '@/components/panel/sales/services/table';
 
 const SalesServices: React.FC = () => {
   return (
@@ -9,6 +11,10 @@ const SalesServices: React.FC = () => {
       <Sidebar />
       <div className="relative h-auto w-full bg-white overflow-y-scroll">
         <Navbar/>
+        <div className='flex justify-start items-center'>
+          <Button/>
+        </div>
+        <Table/>
       </div>
     </div>
   );
