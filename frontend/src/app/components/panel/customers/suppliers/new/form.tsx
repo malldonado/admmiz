@@ -19,14 +19,11 @@ const Form: React.FC = () => {
   const [city, setCity] = useState<string>("");
   const [state, setState] = useState<string>("");
   const [limitCredit, setLimitCredit] = useState<string>("");
-  const [typeContat, setTypeContat] = useState<string>("");
-  const [nameContat, setNameContat] = useState<string>("");
-  const [newContat, setNewContat] = useState<string>("");
-  const [responsibility, setResponsibility] = useState<string>("");
   const [observation, setObservation] = useState<string>("");
-
-  //   const [photo, setPhoto] = useState<string>('');
-  //   const [attachment, setAttachment] = useState<string>('');
+  const [typeContat, setTypeContat] = useState("");
+  const [nameContat, setNameContat] = useState("");
+  const [newContat, setNewContat] = useState("");
+  const [responsibility, setResponsibility] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,7 +35,7 @@ const Form: React.FC = () => {
         <div className="-mx-3 md:flex mb-6">
           <div className="md:w-1/3 px-3 mb-6 md:mb-0">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Tipo de funcionário
+              Tipo de cliente
             </label>
             <select
               className="block appearance-none w-full bg-gray-200 border border-gray-300 text-gray-700 py-1 px-4 pr-8  outline-none"
@@ -238,62 +235,62 @@ const Form: React.FC = () => {
             />
           </div>
         </div>
-        <div className="-mx-3 md:flex mb-6">
-          <div className="md:w-1/4 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Tipo de contato
-            </label>
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 py-1 px-4 outline-none"
-              type="text"
-              placeholder="Tipo de contato"
-              value={typeContat}
-              onChange={(e) => setTypeContat(e.target.value)}
-            />
-          </div>
-          <div className="md:w-1/4 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Nome
-            </label>
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 py-1 px-4 outline-none"
-              type="text"
-              placeholder="Nome"
-              value={nameContat}
-              onChange={(e) => setNameContat(e.target.value)}
-            />
-          </div>
-          <div className="md:w-1/4 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Contato
-            </label>
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 py-1 px-4 outline-none"
-              type="text"
-              placeholder="Contato"
-              value={newContat}
-              onChange={(e) => setNewContat(e.target.value)}
-            />
-          </div>
-          <div className="md:w-1/4 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Cargo
-            </label>
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 py-1 px-4 outline-none"
-              type="text"
-              placeholder="Cargo"
-              value={responsibility}
-              onChange={(e) => setResponsibility(e.target.value)}
-            />
-          </div>
+        {/* <div className="-mx-3 md:flex mb-6"> */}
+        {/* <div className="md:w-1/4 px-3">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            Tipo de contato
+          </label>
+          <input
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 py-1 px-4 outline-none"
+            type="text"
+            placeholder="Tipo de contato"
+            value={typeContat}
+            onChange={(e) => setTypeContat(e.target.value)}
+          />
         </div>
-        <button className="px-2 mb-6 bg-[#315bd4] text-white font-bold w-[200px] h-[40px] flex justify-start items-center">
+        <div className="md:w-1/4 px-3">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            Nome
+          </label>
+          <input
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 py-1 px-4 outline-none"
+            type="text"
+            placeholder="Nome"
+            value={nameContat}
+            onChange={(e) => setNameContat(e.target.value)}
+          />
+        </div>
+        <div className="md:w-1/4 px-3">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            Contato
+          </label>
+          <input
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 py-1 px-4 outline-none"
+            type="text"
+            placeholder="Contato"
+            value={newContat}
+            onChange={(e) => setNewContat(e.target.value)}
+          />
+        </div>
+        <div className="md:w-1/4 px-3">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            Cargo
+          </label>
+          <input
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-300 py-1 px-4 outline-none"
+            type="text"
+            placeholder="Cargo"
+            value={responsibility}
+            onChange={(e) => setResponsibility(e.target.value)}
+          />
+        </div> */}
+      {/* </div> */}
+        {/* <button className="px-2 mb-6 bg-[#315bd4] text-white font-bold w-[200px] h-[40px] flex justify-start items-center">
             <FiPlusCircle className='mr-2 text-xl'/>
             <span>Inserir novo contato</span>
-        </button>
+        </button> */}
         <div className="-mx-3 md:flex mb-6">
-          <div className="md:w-full px-3">
+          <div className="md:w-1/2 px-3">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Observação
             </label>
@@ -305,9 +302,7 @@ const Form: React.FC = () => {
               onChange={(e) => setObservation(e.target.value)}
             />
           </div>
-        </div>
-        <div className="-mx-3 md:flex mb-6">
-          <div className="md:w-1/3 px-3">
+          <div className="md:w-1/2 px-3">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Limite de crédito
             </label>

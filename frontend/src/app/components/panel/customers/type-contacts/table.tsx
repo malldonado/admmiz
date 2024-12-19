@@ -42,7 +42,7 @@ const TableRow: FC<User> = ({
       {name}
     </td>
     <td className="px-4 py-4 text-sm text-black whitespace-nowrap flex justify-end items-center">
-      <NextLink href="/pages/customers/clients/edit">
+      <NextLink href="/pages/customers/type-contacts/edit">
         <FiEdit
           className="cursor-pointer text-lg mr-2
       "

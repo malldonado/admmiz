@@ -28,16 +28,10 @@ const ImportButton: React.FC = () => {
       {isMenuOpen && (
         <div className="absolute left-0 mt-2 w-[200px] bg-white border border-[#ccc] rounded shadow-lg">
           <button className="block px-4 py-2 text-black hover:bg-[#f0f0f0] w-full">
-            Importar planilha
+            Importar
           </button>
           <button className="block px-4 py-2 text-black hover:bg-[#f0f0f0] w-full">
-            Importar XML
-          </button>
-          <button className="block px-4 py-2 text-black hover:bg-[#f0f0f0] w-full">
-            Exportar clientes
-          </button>
-          <button className="block px-4 py-2 text-black hover:bg-[#f0f0f0] w-full">
-            Excluir clientes
+            Exportar
           </button>
         </div>
       )}
