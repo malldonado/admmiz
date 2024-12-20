@@ -207,21 +207,21 @@ const NavbarItems: NavbarItem[] = [
       { text: "Configurações", link: "/pages/contracts/settings" },
     ],
   },
-  {
-    icon: (
-      <TfiComments className="w-6 h-6 text-white transition duration-75 dark:text-white" />
-    ),
-    text: "Atendimentos",
-    link: "",
-    subcategories: [
-      { text: "Atendimentos", link: "/pages/meet/services" },
-      { text: "Formas", link: "/pages/meet/shapes" },
-      { text: "Assuntos", link: "/pages/meet/matters" },
-      { text: "Situações", link: "/pages/meet/situations" },
-      { text: "Campos extras", link: "/pages/meet/extra-fields" },
-      { text: "Configurações", link: "/pages/meet/settings" },
-    ],
-  },
+  // {
+  //   icon: (
+  //     <TfiComments className="w-6 h-6 text-white transition duration-75 dark:text-white" />
+  //   ),
+  //   text: "Atendimentos",
+  //   link: "",
+  //   subcategories: [
+  //     { text: "Atendimentos", link: "/pages/meet/services" },
+  //     { text: "Formas", link: "/pages/meet/shapes" },
+  //     { text: "Assuntos", link: "/pages/meet/matters" },
+  //     { text: "Situações", link: "/pages/meet/situations" },
+  //     { text: "Campos extras", link: "/pages/meet/extra-fields" },
+  //     { text: "Configurações", link: "/pages/meet/settings" },
+  //   ],
+  // },
   {
     icon: (
       <TfiFiles className="w-6 h-6 text-white transition duration-75 dark:text-white" />

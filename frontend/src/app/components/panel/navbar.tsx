@@ -46,6 +46,10 @@ const Navbar: React.FC = () => {
         return "Cadastros - Transportadoras - Editando Transportadora";
       case "/pages/customers/type-contacts":
         return "Cadastros - Tipos de Contatos";
+      case "/pages/customers/type-contacts/new":
+        return "Cadastros - Novo Tipo de Contato";
+      case "/pages/customers/type-contacts/edit":
+        return "Cadastros - Editando Tipo de Contato";
       // case "/pages/customers/type-address":
       //   return "Tipos de Endereços";
       // case "/pages/customers/extra-fields":

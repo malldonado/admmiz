@@ -4,7 +4,7 @@ import Sidebar from "@/app/components/panel/sidebar";
 import Navbar from "@/components/panel/navbar";
 import Form from "@/components/panel/customers/type-contacts/new/form";
 
-const CustomersTypeContactsNew: React.FC = () => {
+const CustomersTypeContactsEdit: React.FC = () => {
   return (
     <div className="h-screen m-0 p-0 overflow-hidden flex justify-center contain bg-[#192231]">
       <Sidebar />
@@ -18,4 +18,4 @@ const CustomersTypeContactsNew: React.FC = () => {
   );
 };
 
-export default CustomersTypeContactsNew;
+export default CustomersTypeContactsEdit;
